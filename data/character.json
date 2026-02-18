@@ -1,0 +1,138 @@
+[
+  {
+    "id": 0,
+    "name": "Nis",
+    "type": ["electro"],
+    "stats": { "hp": 9, "atk": 10, "def": 10, "matk": 12, "mdef": 11, "spd": 8 },
+    "ability": "tenacity",
+    "description": "Studioso e riservato, Nis è un esperto di tecnologia e magia, sempre alla ricerca di nuove conoscenze e sfide.",
+    "sprite": "nis"
+  },
+  {
+    "id": 1,
+    "name": "Renzael",
+    "type": ["ice"],
+    "stats": { "hp": 8, "atk": 14, "def": 8, "matk": 10, "mdef": 7, "spd": 13 },
+    "ability": "Silent Steps",
+    "description": "Un sicario proveniente da una terra lontana. Non si sa molto del suo passato, ma è noto per la sua bravura con le lame e la sua furtività.",
+    "sprite": "renzael"
+  },
+  {
+    "id": 2,
+    "name": "Nikorin",
+    "type": ["ground"],
+    "stats": { "hp": 9, "atk": 10, "def": 12, "matk": 8, "mdef": 12, "spd": 9 },
+    "ability": "positivity",
+    "description": "Un uomo coraggioso e leale, noto per la sua forza quanto per la sua gentilezza. 'Un sorriso fa il doppio della strada di un brontolio'.",
+    "sprite": "nikorin"
+  },
+  {
+    "id": 3,
+    "name": "Debryl",
+    "type": ["fire"],
+    "stats": { "hp": 12, "atk": 8, "def": 8, "matk": 12, "mdef": 9, "spd": 11 },
+    "ability": "Kind heart",
+    "description": "Una delle due principesse del regno, dolce e affettuosa, viene definita l'angelo del regno per la sua purezza d'animo.",
+    "sprite": "debryl"
+  },
+  {
+    "id": 4,
+    "name": "Elaris",
+    "type": ["grass"],
+    "stats": { "hp": 10, "atk": 10, "def": 7, "matk": 11, "mdef": 7, "spd": 15 },
+    "ability": "Iron Will",
+    "description": "Una delle due principesse del regno, determinata quanto intelligente. Nonostante l'aspetto delicato, è una combattente formidabile.",
+    "sprite": "elaris"
+  },
+  {
+    "id": 5,
+    "name": "Brine",
+    "type": ["spirit"],
+    "stats": { "hp": 11, "atk": 8, "def": 7, "matk": 14, "mdef": 12, "spd": 8 },
+    "ability": "Sharp mind",
+    "description": "Una strega di gran talento, studia antiche arti magiche e le stelle, vive in una torre fuori città assieme ai suoi gatti Astra e Molly.",
+    "sprite": "brine"
+  },
+  {
+    "id": 6,
+    "name": "Parsival",
+    "type": ["steel"],
+    "stats": { "hp": 11, "atk": 10, "def": 13, "matk": 9, "mdef": 10, "spd": 7 },
+    "ability": "Knight's honor",
+    "description": "Un cavaliere giunto da un regno lontano, il suo concilio si riunisce attorno ad una grande tavola rotonda.",
+    "sprite": "parsival"
+  },
+  {
+    "id": 7,
+    "name": "Myriel",
+    "type": ["water"],
+    "stats": { "hp": 14, "atk": 8, "def": 11, "matk": 10, "mdef": 10, "spd": 7 },
+    "ability": "Overgrowth",
+    "description": "Proveniente da un villaggio di confine, sogna di viaggiare per il mondo, sa sempre come farsi forza e confortare gli altri.",
+    "sprite": "myriel"
+  },
+  {
+    "id": 8,
+    "name": "Irinel",
+    "type": ["wind"],
+    "stats": { "hp": 11, "atk": 10, "def": 7, "matk": 11, "mdef": 10, "spd": 11 },
+    "ability": "Beast knight",
+    "description": "L'allevatrice di bestie magiche personale del castello, tiene al benessere di tutti, non solo ai suoi animali, ma il suo preferito è Ruby",
+    "sprite": "irinel"
+  },
+  {
+    "id": 9,
+    "name": "Loren",
+    "type": ["ice", "water"],
+    "stats": { "hp": 11, "atk": 9, "def": 8, "matk": 15, "mdef": 7, "spd": 10 },
+    "ability": "Bad luck",
+    "description": "Un antico mago, il suo hobby è collezionare incantesimi e oggetti magici. nonostante l'aspetto cupo è molto amichevole.",
+    "sprite": "loren"
+  },
+  {
+    "id": 10,
+    "name": "Izel",
+    "type": ["wind", "ground"],
+    "stats": { "hp": 8, "atk": 9, "def": 13, "matk": 8, "mdef": 8, "spd": 14 },
+    "ability": "Wind's favor",
+    "description": "Una giovane ragazza che vive in un templio nascosto tra le montagna. il suo nome significa 'libertà' nella sua lingua.",
+    "sprite": "izel"
+  },
+  {
+    "id": 11,
+    "name": "Lord Gallad",
+    "type": ["grass", "wind"],
+    "stats": { "hp": 7, "atk": 12, "def": 14, "matk": 8, "mdef": 8, "spd": 11 },
+    "ability": "Bug Lord",
+    "description": "Un nobile proveniente dal villaggio sugli alberi, esperto di mostri ma soprattutto di insetti, tanto da averne uno da compagnia: Kiko.",
+    "sprite": "lordgallad"
+  },
+  {
+    "id": 12,
+    "name": "Won'tolla",
+    "type": ["spirit", "ground"],
+    "stats": { "hp": 8, "atk": 15, "def": 10, "matk": 9, "mdef": 10, "spd": 8 },
+    "ability": "Omen of the forest",
+    "description": "proveniente dalle terre disabitate del sud, dei demoni gli hanno portato via la famiglia, ha giurato vendetta e farà di tutto per averla.",
+    "sprite": "wontolla"
+  },
+  {
+    "id": 13,
+    "name": "Tonmar",
+    "type": ["fire", "ground"],
+    "stats": { "hp": 13, "atk": 7, "def": 9, "matk": 8, "mdef": 14, "spd": 9 },
+    "ability": "all or nothing",
+    "description": "Scommette su tutto, anche cose impossibili e non si tira mai indietro. una volta è finito a giocare a dadi con un demone, si dice che abbia vinto.",
+    "sprite": "tonmar"
+  },
+  {
+    "id": 14,
+    "name": "Mary Robert",
+    "type": ["water", "fire"],
+    "stats": { "hp": 10, "atk": 13, "def": 8, "matk": 7, "mdef": 12, "spd": 10 },
+    "ability": "Fire!!",
+    "description": "Una dei 7 corsari leggendari, non possiede un veliero ma ha vissuto su molti. Spietata in battaglia si dice che non ne abbia mai persa una.",
+    "sprite": "maryrobert"
+  }
+  
+]

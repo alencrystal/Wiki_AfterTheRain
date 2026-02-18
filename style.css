@@ -1,0 +1,399 @@
+/* === RESET & FONT PIXEL === */
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    image-rendering: pixelated;
+    image-rendering: crisp-edges;
+}
+
+/* Modifica il body */
+body {
+    background-color: #0f0c0b;
+    background-image: radial-gradient(circle at 20% 30%, #2a1e1a 1px, transparent 1px);
+    background-size: 24px 24px;
+    font-family: 'Press Start 2P', 'Courier New', monospace;
+    color: #e6d6c2;
+    padding: 0 24px 32px 24px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;  /* Torna a column */
+    align-items: center;
+}
+
+
+
+/* === CONTAINER PRINCIPALE === */
+.wiki-container {
+    max-width: 1350px;
+    width: 100%;
+    margin: 4vh auto 0 auto;
+    border: 4px solid #4a3c31;
+    background: #1e1917;
+    box-shadow: 12px 12px 0 #0a0706, 0 0 0 2px #6b5546 inset;
+    padding: 24px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+    position: relative;
+}
+
+/* === PANNELLO SINISTRO === */
+.left-panel {
+    flex: 2 1 520px;
+    min-width: 300px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Nome con ID a sinistra */
+.name-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    background: #251e1b;
+    border: 4px solid #4f3e35;
+    padding: 16px 20px;
+    box-shadow: 6px 6px 0 #0f0c0a inset, 6px 6px 0 #120e0c;
+    flex-wrap: wrap;
+}
+
+.char-id {
+    background: #0f0807;
+    color: #b89a7a;
+    padding: 10px 16px;
+    font-size: 18px;
+    border: 3px solid #6f523b;
+    box-shadow: 5px 5px 0 #2f231e;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.char-name {
+    font-size: 28px;
+    color: #fae4bc;
+    text-shadow: 4px 4px 0 #4f2f21, 2px 2px 0 #221712;
+    word-break: break-word;
+    line-height: 1.3;
+}
+
+/* Sprite area - subito sotto il nome */
+.sprite-area {
+    position: relative;
+    border: 6px solid #342a24;
+    background: #130f0d;
+    box-shadow: inset 0 0 0 4px #271e1b, 8px 8px 0 #0e0b09;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 28px;
+    image-rendering: pixelated;
+    width: 100%;
+    height: 45vh;
+}
+
+.sprite-img {
+    width: 100%;
+    max-width: 240px;
+    height: 40vh;
+    object-fit: contain;
+    filter: drop-shadow(6px 6px 0 #2c1f1a);
+}
+
+/* Tipo section - label sopra ai badges e tutto centrato */
+.type-section {
+    background: #1e1613;
+    border: 4px solid #5d453a;
+    padding: 16px 20px;
+    box-shadow: 4px 4px 0 #100b09 inset, 6px 6px 0 #1b1310;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+}
+
+.type-label {
+    color: #dbbf9b;
+    font-size: 16px;
+    text-transform: uppercase;
+    text-align: center;
+    border-bottom: 3px solid #8b6452;
+    padding-bottom: 8px;
+    width: 100%;
+}
+
+.type-badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    justify-content: center;
+}
+
+.badge {
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    border: 3px solid #1e1714;
+    box-shadow: 5px 5px 0 #0c0907, inset 0 0 0 2px #ffe3b0;
+    color: #faf3e5;
+    text-shadow: 2px 2px 0 #1f130e;
+    letter-spacing: 2px;
+}
+
+.badge.water { background: #1c3f56; border-color: #5e9bb8; box-shadow: 5px 5px 0 #0a1c26, inset 0 0 0 2px #8bbfd6; }
+.badge.fire { background: #5a1e16; border-color: #b36a4a; box-shadow: 5px 5px 0 #260c09, inset 0 0 0 2px #d9a58c; }
+.badge.grass { background: #2b4634; border-color: #7aa388; box-shadow: 5px 5px 0 #121f18, inset 0 0 0 2px #a7cbb2; }
+.badge.electro { background: #4a3f14; border-color: #bfa85a; box-shadow: 5px 5px 0 #1f1a08, inset 0 0 0 2px #e0cf9b; }
+.badge.ice { background: #2b4d55; border-color: #7fb3be; box-shadow: 5px 5px 0 #111f24, inset 0 0 0 2px #a9d4dd; }
+.badge.ground { background: #3e2e1b; border-color: #a08256; box-shadow: 5px 5px 0 #1c140b, inset 0 0 0 2px #c7ad85; }
+.badge.spirit { background: #2a2436; border-color: #8f82b0; box-shadow: 5px 5px 0 #120f1a, inset 0 0 0 2px #b8aedd; }
+.badge.steel { background: #2f3238; border-color: #8f96a3; box-shadow: 5px 5px 0 #14161a, inset 0 0 0 2px #b9c0cc; }
+.badge.wind { background: #2f3f3a; border-color: #86b3a6; box-shadow: 5px 5px 0 #141f1c, inset 0 0 0 2px #b5d6cc;}
+
+
+/* Abilità  */
+.ability-section {
+    background: #130e0c;
+    border: 4px solid #5d453a;
+    padding: 16px 20px;
+    box-shadow: 4px 4px 0 #100b09 inset, 6px 6px 0 #1b1310;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+}
+
+.ability-label {
+    color: #dbbf9b;
+    font-size: 16px;
+    text-transform: uppercase;
+    text-align: center;
+    border-bottom: 3px solid #8b6452;
+    padding-bottom: 8px;
+    width: 100%;
+}
+
+.ability-name {
+    background: #2c1f1a;
+    padding: 12px 24px;
+    font-size: 16px;
+    border: 3px solid #9f7c5e;
+    box-shadow: 5px 5px 0 #3e2c24;
+    color: #ffdbb5;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+/* Tre sezioni: debolezze, resistenze, immunità */
+.resistances-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    justify-content: space-between;
+}
+
+.resist-box {
+    flex: 1 1 160px;
+    background: #1c1412;
+    border: 4px solid #4a362e;
+    padding: 16px 12px;
+    box-shadow: 5px 5px 0 #0f0a08 inset, 6px 6px 0 #1a1210;
+}
+
+.resist-title {
+    font-size: 14px;
+    color: #cbad8b;
+    margin-bottom: 14px;
+    text-align: center;
+    text-transform: uppercase;
+    border-bottom: 3px dotted #8b6452;
+    padding-bottom: 8px;
+}
+
+.resist-badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+}
+
+.resist-badge {
+    padding: 6px 12px;
+    font-size: 12px;
+    border: 2px solid #1e1714;
+    box-shadow: 3px 3px 0 #0c0907, inset 0 0 0 1px #ffe3b0;
+    color: #faf3e5;
+    text-shadow: 1px 1px 0 #1f130e;
+}
+
+/* === PANNELLO DESTRO === */
+.right-panel {
+    flex: 1 1 300px;
+    background: #1a1311;
+    border: 4px solid #4f3e35;
+    box-shadow: 8px 8px 0 #0f0c0a inset, 8px 8px 0 #0b0706;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+/* Stats barre */
+.stats-container {
+    background: #130e0c;
+    border: 4px solid #4f3e35;
+    padding: 20px 16px;
+    box-shadow: 5px 5px 0 #0a0706 inset;
+}
+
+.stats-title {
+    color: #cbad8b;
+    font-size: 18px;
+    margin-bottom: 24px;
+    text-align: center;
+    text-transform: uppercase;
+    border-bottom: 3px solid #6f523b;
+    padding-bottom: 10px;
+    letter-spacing: 3px;
+}
+
+.stat-row {
+    display: flex;
+    align-items: center;
+    margin-bottom: 18px;
+    gap: 12px;
+}
+
+.stat-label {
+    width: 60px;
+    font-size: 14px;
+    color: #dbbc9e;
+    text-transform: uppercase;
+    text-shadow: 2px 2px 0 #1a110e;
+}
+
+.stat-bar-bg {
+    flex: 1;
+    height: 22px;
+    background: #251c18;
+    border: 3px solid #3f2f28;
+    box-shadow: inset 3px 3px 0 #0a0706;
+    position: relative;
+}
+
+.stat-bar-fill {
+    height: 100%;
+    width: 0%;
+    background: #7a9c6b;
+    border: 2px solid #c2e0a8;
+    box-shadow: inset 0 0 8px #d4ffb0;
+}
+
+.stat-value {
+    font-size: 14px;
+    color: #ffeac2;
+    min-width: 40px;
+    text-align: right;
+    text-shadow: 2px 2px 0 #2a1c16;
+}
+
+.stat-bar-fill.hp { background: #b35f5f; border-color: #ffb6b6; }
+.stat-bar-fill.atk { background: #b8452e; border-color: #ffa07a; }
+.stat-bar-fill.def { background: #568fa3; border-color: #b0e2ff; }
+.stat-bar-fill.matk { background: #8a6bb5; border-color: #dbbaff; }
+.stat-bar-fill.mdef { background: #4f7a9c; border-color: #b1d4ff; }
+.stat-bar-fill.spd { background: #b89b3b; border-color: #ffe070; }
+
+/* Descrizione - attaccata sotto le stats */
+.description-area {
+    background: #130e0c;
+    border: 4px solid #5d453a;
+    padding: 20px;
+    box-shadow: 4px 4px 0 #100b09 inset, 6px 6px 0 #1b1310;
+}
+
+.description-title {
+    color: #dbbf9b;
+    font-size: 16px;
+    text-align: center;
+    margin-bottom: 16px;
+    text-underline-offset: 8px;
+    text-transform: uppercase;
+    border-bottom: 3px solid #6f523b;
+    padding-bottom: 8px;
+    letter-spacing: 2px;
+}
+
+.description-text {
+    font-size: 14px;
+    line-height: 1.9;
+    color: #dac9b5;
+    text-shadow: 2px 2px 0 #0e0a08;
+}
+
+/* === FRECCE DI NAVIGAZIONE === */
+
+/* === FRECCE DI NAVIGAZIONE - VERTICALI A DESTRA === */
+.nav-arrows {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    position: fixed;
+    right: 30px;
+    bottom: 30px;
+    z-index: 100;
+}
+
+.arrow-btn {
+    background: #2c1f1a;
+    border: 4px solid #6f523b;
+    padding: 16px 24px;
+    font-size: 18px;
+    color: #fae4bc;
+    box-shadow: 6px 6px 0 #0e0b09;
+    cursor: pointer;
+    transition: 0.1s ease;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-family: 'Press Start 2P', monospace;
+    width: 200px;
+    text-align: center;
+}
+
+.arrow-btn:hover {
+    transform: translate(3px, 3px);
+    box-shadow: 3px 3px 0 #0e0b09;
+}
+
+/* === RESPONSIVE === */
+@media (max-width: 900px) {
+    .wiki-header {
+        flex-direction: column;
+        gap: 16px;
+    }
+    
+    .header-nav {
+        justify-content: center;
+    }
+    
+    .name-wrapper {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .type-section, .ability-section {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .nav-arrows {
+        position: static;
+        margin-top: 24px;
+        justify-content: center;
+    }
+}

@@ -1,0 +1,11 @@
+[{
+      "fire":      { "grass": 2, "water": 0.5, "ice": 2, "ground": 0.5, "electro": 2, "fire": 0.5, "steel": 2, "spirit": 0.5 },
+      "water":     { "fire": 2, "ground": 2, "grass": 0.5 , "water": 0.5, "electro": 0.5, "spirit": 2 },
+      "grass":     { "water": 2, "ground": 2, "fire": 0.5, "grass": 0.5, "ice": 0.5, "steel": 0.5 },
+      "electro":   { "water": 2, "flying": 2, "grass": 0.5, "fire": 2, "ground": 0, "electro": 0.5 , "steel": 2, "spirit": 0.5},
+      "ice":       { "grass": 2, "flying": 2, "fire": 0.5, "ice": 0.5, "steel": 0.5 },
+      "ground":    { "fire": 2, "flying": 0, "grass": 0.5, "electro": 2, "steel": 2 },
+      "flying":    { "grass": 2, "electro": 0.5, "ice": 0.5, "steel": 0.5, "spirit": 2 },
+      "steel":     { "spirit": 0, "ice": 2, "water": 0.5, "fire": 0.5, "steel": 0.5 },
+      "spirit":    { "steel": 0, "water": 0.5, "grass": 0.5, "spirit": 2 }
+    }]

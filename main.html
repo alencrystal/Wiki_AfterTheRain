@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="it" spellcheck="false">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="/images/site_icon.svg">
+    <link rel="stylesheet" href="style.css?v=20250224">
+
+    <title>AfterTheRain Wiki</title>
+    <style>
+
+    </style>
+</head>
+<body>
+    <!-- CONTAINER PRINCIPALE -->
+    <div class="wiki-container">
+        <!-- PANNELLO SINISTRO -->
+        <div class="left-panel">
+            <!-- Nome con ID a sinistra -->
+            <div class="name-wrapper">
+                <span class="char-id">id</span>
+                <h1 class="char-name">nome</h1>
+            </div>
+
+            <!-- Sprite subito sotto il nome -->
+            <div class="sprite-area">
+                <img class="sprite-img" src="" alt="sprite">
+            </div>
+
+            <!-- TIPI - label accanto ai badges -->
+            <div class="type-section">
+                <span class="type-label">TYPE:</span>
+                <div class="type-badges">
+                    <span class="badge water">tipo1</span>
+                    <span class="badge fire">tipo2</span>
+                </div>
+            </div>
+
+            <!-- 3 sezioni: debolezze, resistenze, immunità -->
+            <div class="resistances-wrapper">
+                <div class="resist-box">
+                    <div class="resist-title">WEAKNESSES</div>
+                    <div class="resist-badges">
+                        <span class="resist-badge" style="background:#7b3f5f;">ELECTRO</span>
+                        <span class="resist-badge" style="background:#5f4f3a;">GROUND</span>
+                    </div>
+                </div>
+                <div class="resist-box">
+                    <div class="resist-title">RESISTANCES</div>
+                    <div class="resist-badges">
+                        <span class="resist-badge" style="background:#4f6b7a;">ICE</span>
+                        <span class="resist-badge" style="background:#6b4f3a;">GROUND</span>
+                    </div>
+                </div>
+                <div class="resist-box">
+                    <div class="resist-title">IMMUNITIES</div>
+                    <div class="resist-badges">
+                        <span class="resist-badge" style="background:#3a3f4a;">SPIRIT</span>
+                        <span class="resist-badge" style="background:#4f3f2a;">STEEL</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- PANNELLO DESTRO -->
+        <div class="right-panel">
+            <!-- Barre delle stats -->
+            <div class="stats-container">
+                <div class="stats-title">STATS</div>
+                
+                <div class="stat-row">
+                    <span class="stat-label">HP</span>
+                    <div class="stat-bar-bg">
+                        <div class="stat-bar-fill hp" style="width: 50%;"></div>
+                    </div>
+                    <span class="stat-value">10</span>
+                </div>
+                
+                <div class="stat-row">
+                    <span class="stat-label">ATK</span>
+                    <div class="stat-bar-bg">
+                        <div class="stat-bar-fill atk" style="width: 50%;"></div>
+                    </div>
+                    <span class="stat-value">10</span>
+                </div>
+                
+                <div class="stat-row">
+                    <span class="stat-label">DEF</span>
+                    <div class="stat-bar-bg">
+                        <div class="stat-bar-fill def" style="width: 50%;"></div>
+                    </div>
+                    <span class="stat-value">10</span>
+                </div>
+                
+                <div class="stat-row">
+                    <span class="stat-label">MATK</span>
+                    <div class="stat-bar-bg">
+                        <div class="stat-bar-fill matk" style="width: 50%;"></div>
+                    </div>
+                    <span class="stat-value">10</span>
+                </div>
+                
+                <div class="stat-row">
+                    <span class="stat-label">MDEF</span>
+                    <div class="stat-bar-bg">
+                        <div class="stat-bar-fill mdef" style="width: 50%;"></div>
+                    </div>
+                    <span class="stat-value">10</span>
+                </div>
+                
+                <div class="stat-row">
+                    <span class="stat-label">SPD</span>
+                    <div class="stat-bar-bg">
+                        <div class="stat-bar-fill spd" style="width: 50%;"></div>
+                    </div>
+                    <span class="stat-value">10</span>
+                </div>
+            </div>
+
+            <!-- ABILITÀ - label accanto al nome abilità -->
+            <div class="ability-section">
+                <span class="ability-label">ABILITY:</span>
+                <div class="ability-name">name</div>
+            </div>
+            <!-- Descrizione ATTACCATA subito sotto le statistiche -->
+            <div class="description-area">
+                <div class="description-title">DESCRIPTION:</div>
+                <div class="description-text">
+                    description text
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+
+    <!-- FRECCE DI NAVIGAZIONE -->
+    <div class="nav-arrows">
+        <button id="next-btn" class="arrow-btn">NEXT ▶</button>
+        <button id="prev-btn" class="arrow-btn">◀ PREV</button>
+    </div>
+    <script src="/javascript/populate.js"></script>
+    <script src="/javascript/selectcharacter.js"></script>
+</body>
+</html>
