@@ -19,7 +19,7 @@ body {
     padding: 0 24px 32px 24px;
     min-height: 100vh;
     display: flex;
-    flex-direction: column;  /* Torna a column */
+    flex-direction: column;
     align-items: center;
 }
 
@@ -27,9 +27,9 @@ body {
 
 /* === CONTAINER PRINCIPALE === */
 .wiki-container {
-    max-width: 1350px;
+    max-width: 1470px;
     width: 100%;
-    margin: 4vh auto 0 auto;
+    margin: 2vh auto 0 15vh;
     border: 4px solid #4a3c31;
     background: #1e1917;
     box-shadow: 12px 12px 0 #0a0706, 0 0 0 2px #6b5546 inset;
@@ -116,16 +116,6 @@ body {
     gap: 16px;
 }
 
-.type-label {
-    color: #dbbf9b;
-    font-size: 16px;
-    text-transform: uppercase;
-    text-align: center;
-    border-bottom: 3px solid #8b6452;
-    padding-bottom: 8px;
-    width: 100%;
-}
-
 .type-badges {
     display: flex;
     flex-wrap: wrap;
@@ -144,15 +134,17 @@ body {
     letter-spacing: 2px;
 }
 
-.badge.water { background: #1c3f56; border-color: #5e9bb8; box-shadow: 5px 5px 0 #0a1c26, inset 0 0 0 2px #8bbfd6; }
-.badge.fire { background: #5a1e16; border-color: #b36a4a; box-shadow: 5px 5px 0 #260c09, inset 0 0 0 2px #d9a58c; }
-.badge.grass { background: #2b4634; border-color: #7aa388; box-shadow: 5px 5px 0 #121f18, inset 0 0 0 2px #a7cbb2; }
-.badge.electro { background: #4a3f14; border-color: #bfa85a; box-shadow: 5px 5px 0 #1f1a08, inset 0 0 0 2px #e0cf9b; }
-.badge.ice { background: #2b4d55; border-color: #7fb3be; box-shadow: 5px 5px 0 #111f24, inset 0 0 0 2px #a9d4dd; }
-.badge.ground { background: #3e2e1b; border-color: #a08256; box-shadow: 5px 5px 0 #1c140b, inset 0 0 0 2px #c7ad85; }
-.badge.spirit { background: #2a2436; border-color: #8f82b0; box-shadow: 5px 5px 0 #120f1a, inset 0 0 0 2px #b8aedd; }
-.badge.steel { background: #2f3238; border-color: #8f96a3; box-shadow: 5px 5px 0 #14161a, inset 0 0 0 2px #b9c0cc; }
-.badge.wind { background: #2f3f3a; border-color: #86b3a6; box-shadow: 5px 5px 0 #141f1c, inset 0 0 0 2px #b5d6cc;}
+
+/* Color rules for types: apply to both .badge and .resist-badge via grouped selectors */
+.badge.water, .resist-badge.water { background: #1c3f56; border-color: #5e9bb8; box-shadow: 5px 5px 0 #0a1c26, inset 0 0 0 2px #8bbfd6; }
+.badge.fire, .resist-badge.fire { background: #5a1e16; border-color: #b36a4a; box-shadow: 5px 5px 0 #260c09, inset 0 0 0 2px #d9a58c; }
+.badge.grass, .resist-badge.grass { background: #2b4634; border-color: #7aa388; box-shadow: 5px 5px 0 #121f18, inset 0 0 0 2px #a7cbb2; }
+.badge.electro, .resist-badge.electro { background: #4a3f14; border-color: #bfa85a; box-shadow: 5px 5px 0 #1f1a08, inset 0 0 0 2px #e0cf9b; }
+.badge.ice, .resist-badge.ice { background: #2b4d55; border-color: #7fb3be; box-shadow: 5px 5px 0 #111f24, inset 0 0 0 2px #a9d4dd; }
+.badge.ground, .resist-badge.ground { background: #3e2e1b; border-color: #a08256; box-shadow: 5px 5px 0 #1c140b, inset 0 0 0 2px #c7ad85; }
+.badge.spirit, .resist-badge.spirit { background: #2a2436; border-color: #8f82b0; box-shadow: 5px 5px 0 #120f1a, inset 0 0 0 2px #b8aedd; }
+.badge.steel, .resist-badge.steel { background: #2f3238; border-color: #8f96a3; box-shadow: 5px 5px 0 #14161a, inset 0 0 0 2px #b9c0cc; }
+.badge.wind, .resist-badge.wind { background: #2f3f3a; border-color: #86b3a6; box-shadow: 5px 5px 0 #141f1c, inset 0 0 0 2px #b5d6cc; }
 
 
 /* Abilità  */
@@ -223,7 +215,7 @@ body {
 }
 
 .resist-badge {
-    padding: 6px 12px;
+    padding: 6px 10px;
     font-size: 12px;
     border: 2px solid #1e1714;
     box-shadow: 3px 3px 0 #0c0907, inset 0 0 0 1px #ffe3b0;
@@ -337,8 +329,6 @@ body {
 }
 
 /* === FRECCE DI NAVIGAZIONE === */
-
-/* === FRECCE DI NAVIGAZIONE - VERTICALI A DESTRA === */
 .nav-arrows {
     display: flex;
     flex-direction: column;
@@ -361,7 +351,7 @@ body {
     text-transform: uppercase;
     letter-spacing: 2px;
     font-family: 'Press Start 2P', monospace;
-    width: 200px;
+    width: 180px;
     text-align: center;
 }
 

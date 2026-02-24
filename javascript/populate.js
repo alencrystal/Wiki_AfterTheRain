@@ -42,6 +42,68 @@ document.addEventListener('DOMContentLoaded', () => {
         typeBadges.appendChild(s);
       });
 
+      // --- DYNAMIC RESISTANCES/WEAKNESSES/IMMUNITIES ---
+      async function updateResistances(types) {
+        if (typeof window.computeTypeEffectiveness !== 'function') {
+          console.warn('computeTypeEffectiveness non disponibile — assicurati che javascript/weakness.js sia incluso prima di populate.js');
+          return;
+        }
+        try {
+          const primary = types && types.length ? types[0] : null;
+          if (!primary) return; // nothing to compute
+          const secondary = types && types.length > 1 ? types[1] : null;
+          const { groups } = await window.computeTypeEffectiveness(primary, secondary);
+
+          // Order and labels for boxes we want to create when non-empty
+          const order = [ '4', '2', '0.5', '0.25', '0' ];
+          const labels = {
+            '4': 'x4',
+            '2': 'x2',
+            '0.5': 'x½',
+            '0.25': 'x¼',
+            '0': 'x0'
+          };
+
+          const wrapper = document.querySelector('.resistances-wrapper');
+          if (!wrapper) return;
+
+          // Clear existing boxes and rebuild only those with items
+          wrapper.innerHTML = '';
+
+          order.forEach(key => {
+            const list = groups[key] || [];
+            if (!list || list.length === 0) return; // skip empty groups
+
+            const box = document.createElement('div');
+            box.className = 'resist-box';
+
+            const title = document.createElement('div');
+            title.className = 'resist-title';
+            title.textContent = labels[key];
+            box.appendChild(title);
+
+            const badges = document.createElement('div');
+            badges.className = 'resist-badges';
+
+            list.forEach(t => {
+              const sp = document.createElement('span');
+              // include both class for general styling and the type name for optional color rules
+              sp.className = `resist-badge ${String(t).toLowerCase()}`;
+              sp.textContent = String(t).toUpperCase();
+              badges.appendChild(sp);
+            });
+
+            box.appendChild(badges);
+            wrapper.appendChild(box);
+          });
+        } catch (e) {
+          console.error('Errore nel calcolo delle effettività dei tipi', e);
+        }
+      }
+
+      // Avvia l'aggiornamento delle resistenze usando i tipi del personaggio
+      updateResistances(char.type || []);
+
       // Abilità e descrizione: se non presenti, mostra stringa vuota
       abilityEl.textContent = (char.ability || '');
       descEl.textContent = char.description || '';
