@@ -1,12 +1,12 @@
 [
   {
     "id": 0,
-    "name": "Nis",
+    "name": "Eugëlion",
     "type": ["electro"],
-    "stats": { "hp": 9, "atk": 10, "def": 10, "matk": 12, "mdef": 11, "spd": 8 },
-    "ability": "tenacity",
-    "description": "Studioso e riservato, Nis è un esperto di tecnologia e magia, sempre alla ricerca di nuove conoscenze e sfide.",
-    "sprite": "nis"
+    "stats": { "hp": 10, "atk": 10, "def": 10, "matk": 10, "mdef": 10, "spd": 10 },
+    "ability": "Helpful",
+    "description": "Il tuttofare della città, sa sempre tutto, se hai bisogno di qualcosa puoi sempre contare su di lui.",
+    "sprite": "eugelion"
   },
   {
     "id": 1,
@@ -82,12 +82,12 @@
   },
   {
     "id": 9,
-    "name": "Loren",
-    "type": ["ice", "water"],
-    "stats": { "hp": 11, "atk": 9, "def": 8, "matk": 15, "mdef": 7, "spd": 10 },
-    "ability": "Bad luck",
-    "description": "Un antico mago, il suo hobby è collezionare incantesimi e oggetti magici. nonostante l'aspetto cupo è molto amichevole.",
-    "sprite": "loren"
+    "name": "Tonmar",
+    "type": ["fire", "ground"],
+    "stats": { "hp": 13, "atk": 7, "def": 9, "matk": 8, "mdef": 14, "spd": 9 },
+    "ability": "all or nothing",
+    "description": "Scommette su tutto, anche cose impossibili e non si tira mai indietro. una volta è finito a giocare a dadi con un demone, si dice che abbia vinto.",
+    "sprite": "tonmar"
   },
   {
     "id": 10,
@@ -111,19 +111,19 @@
     "id": 12,
     "name": "Won'tolla",
     "type": ["spirit", "ground"],
-    "stats": { "hp": 8, "atk": 15, "def": 10, "matk": 9, "mdef": 10, "spd": 8 },
+    "stats": { "hp": 9, "atk": 15, "def": 10, "matk": 9, "mdef": 10, "spd": 7 },
     "ability": "Omen of the forest",
     "description": "proveniente dalle terre disabitate del sud, dei demoni gli hanno portato via la famiglia, ha giurato vendetta e farà di tutto per averla.",
     "sprite": "wontolla"
   },
   {
     "id": 13,
-    "name": "Tonmar",
-    "type": ["fire", "ground"],
-    "stats": { "hp": 13, "atk": 7, "def": 9, "matk": 8, "mdef": 14, "spd": 9 },
-    "ability": "all or nothing",
-    "description": "Scommette su tutto, anche cose impossibili e non si tira mai indietro. una volta è finito a giocare a dadi con un demone, si dice che abbia vinto.",
-    "sprite": "tonmar"
+    "name": "Nis",
+    "type": ["grass", "fire"],
+    "stats": { "hp": 9, "atk": 10, "def": 10, "matk": 8, "mdef": 11, "spd": 12 },
+    "ability": "tenacity",
+    "description": "Studioso e riservato, Nis è un esperto cacciatore, il suo hobby è collezionare mostri particolari che ha cacciato.",
+    "sprite": "nis"
   },
   {
     "id": 14,
@@ -133,6 +133,24 @@
     "ability": "Fire!!",
     "description": "Una dei 7 corsari leggendari, non possiede un veliero ma ha vissuto su molti. Spietata in battaglia si dice che non ne abbia mai persa una.",
     "sprite": "maryrobert"
+  },
+  {
+    "id": 15,
+    "name": "Miko",
+    "type": ["fire", "wind"],
+    "stats": { "hp": 13, "atk": 15, "def": 7, "matk": 7, "mdef": 7, "spd": 11 },
+    "ability": "Rank SSS",
+    "description": "Un avventuriero famosissimo, si dice che abbia sconfitto un drago senza subire un graffio. è un cavaliere onorario e tende ad agire in solitaria.",
+    "sprite": "miko"
+  },
+  {
+    "id": 16,
+    "name": "Loren",
+    "type": ["ice", "water"],
+    "stats": { "hp": 11, "atk": 9, "def": 8, "matk": 15, "mdef": 7, "spd": 10 },
+    "ability": "Bad luck",
+    "description": "Un antico mago, il suo hobby è collezionare incantesimi e oggetti magici. nonostante l'aspetto cupo è molto amichevole.",
+    "sprite": "loren"
   }
   
 ]
