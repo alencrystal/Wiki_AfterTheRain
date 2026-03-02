@@ -84,9 +84,9 @@
     "id": 9,
     "name": "Tonmar",
     "type": ["fire", "ground"],
-    "stats": { "hp": 13, "atk": 7, "def": 9, "matk": 8, "mdef": 14, "spd": 9 },
-    "ability": "all or nothing",
-    "description": "Scommette su tutto, anche cose impossibili e non si tira mai indietro. una volta è finito a giocare a dadi con un demone, si dice che abbia vinto.",
+    "stats": { "hp": 11, "atk": 7, "def": 10, "matk": 8, "mdef": 15, "spd": 9 },
+    "ability": "Never give up",
+    "description": "Una dei cavalieri del regno, addestrato per proteggere e supportare gli altri. 'se ci credi davvero, ci riuscirai, non importa quanto sia difficile'.",
     "sprite": "tonmar"
   },
   {
@@ -151,6 +151,33 @@
     "ability": "Bad luck",
     "description": "Un antico mago, il suo hobby è collezionare incantesimi e oggetti magici. nonostante l'aspetto cupo è molto amichevole.",
     "sprite": "loren"
+  },
+  {
+    "id": 17,
+    "name": "Z",
+    "type": ["steel", "spirit"],
+    "stats": { "hp": 9, "atk": 8, "def": 13, "matk": 9, "mdef": 13, "spd": 8 },
+    "ability": "Demon pact",
+    "description": "Un giovane cavaliere che per diventare più forte ha stretto un patto con un demone, nonostante l'aspetto cupo è molto amichevole.",
+    "sprite": "z"
+  },
+  {
+    "id": 18,
+    "name": "Anacoreta",
+    "type": ["ice", "electro"],
+    "stats": { "hp": 8, "atk": 13, "def": 8, "matk": 13, "mdef": 8, "spd": 10 },
+    "ability": "Divine blessing",
+    "description": "Una dea caduta molto tempo fa, nonostante abbia perso gran parte dei suoi poteri, viene ancora venerata e rispettata come tale.",
+    "sprite": "anacoreta"
+  },
+  {
+    "id": 19,
+    "name": "Theos",
+    "type": ["water", "electro"],
+    "stats": { "hp": 11, "atk": 13, "def": 9, "matk": 7, "mdef": 10, "spd": 10 },
+    "ability": "Punch thrower",
+    "description": "Un ragazzo che possiede una taverna fuori città. La parte preferita del suo lavoro è placare le risse nella locanda.",
+    "sprite": "theos"
   }
   
 ]
