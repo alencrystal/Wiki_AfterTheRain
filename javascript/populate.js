@@ -14,7 +14,10 @@ document.addEventListener('DOMContentLoaded', () => {
     try {
       const res = await fetch('data/ability.json');
       const abilities = await res.json();
-      abilities.forEach(a => abilityCache.set(Number(a.id), String(a.name)));
+      abilities.forEach(a => abilityCache.set(Number(a.id), {
+        name: String(a.name),
+        description: String(a.description || '')
+      }));
     } catch (e) {
       console.error('Errore caricamento ability.json', e);
     }
@@ -24,7 +27,13 @@ document.addEventListener('DOMContentLoaded', () => {
   async function resolveAbilityName(abilityId) {
     if (abilityId == null) return '';
     const map = await loadAbilities();
-    return map.get(Number(abilityId)) || '';
+    return map.get(Number(abilityId))?.name || '';
+  }
+
+  async function resolveAbilityDescription(abilityId) {
+    if (abilityId == null) return '';
+    const map = await loadAbilities();
+    return map.get(Number(abilityId))?.description || '';
   }
 
   // Espone una funzione globale `setCharacterById(id)` che carica i dati
@@ -124,8 +133,12 @@ document.addEventListener('DOMContentLoaded', () => {
       // Avvia l'aggiornamento delle resistenze usando i tipi del personaggio
       updateResistances(char.type || []);
 
-      // altrimenti mostra la stringa già presente.
       abilityEl.textContent = await resolveAbilityName(char.ability);
+      const tooltipEl = document.querySelector('.ability-tooltip');
+      if (tooltipEl) {
+        tooltipEl.textContent = await resolveAbilityDescription(char.ability);
+        tooltipEl.style.display = tooltipEl.textContent ? 'block' : 'none';
+      }
       descEl.textContent = char.desc_eng || '';
 
       // Mappa le etichette visibili alle chiavi nei dati (HP -> hp, ...)
