@@ -1,0 +1,103 @@
+[
+    {
+    "id": 0,
+    "name": "Helpful",
+    "description": "Boost the stats of the ally by 3%."
+    },
+    {
+    "id": 1,
+    "name": "Silent Steps",
+    "description": "Boost first attack by 15%."
+    },
+    {
+    "id": 2,
+    "name": "Positivity",
+    "description": "This character can't go in crisis."
+    },
+    {
+    "id": 3,
+    "name": "kind heart",
+    "description": "Healing, shield and buff are 5% stronger."
+    },
+    {
+    "id": 4,
+    "name": "Iron Will",
+    "description": "When in crisis, every turn boost random stat by 5%."
+    },
+    {
+    "id": 5, 
+    "name": "Sharp mind",
+    "description": "boost magic defense by 10%."
+    },
+    {
+    "id": 6,
+    "name": "Knight's honor",
+    "description": "Boost defense by 10%."
+    },
+    {
+    "id": 7,
+    "name": "Overgrowth",
+    "description": "Boost health by 10%."
+    },
+    {
+    "id": 8,
+    "name": "Beast knight",
+    "description": "When in crisis, boost attack and magic attack by 10%."
+    },
+    {    
+    "id": 9,
+    "name": "Never give up",
+    "description": "When in crisis, boost all stats by 5%."
+    },
+    {
+    "id": 10,
+    "name": "Wind's favor",
+    "description": "Boost speed by 10%."
+    },
+    {
+    "id": 11,
+    "name": "Bug lord",
+    "description": "When hit by a grass attack, boost speed by 10%."
+    },
+    {
+    "id": 12,
+    "name": "Omen of the forest",
+    "description": "Reduce everyone's defence by 5%, when in crisis further by 5%."
+    },
+    {
+    "id": 13,
+    "name": "Tenacity",
+    "description": "When in crisis, boost defense and magic defense by 10%."
+    },
+    {
+    "id": 14,
+    "name": "Fire!!",
+    "description": "Boost fire attack by 15%."
+    },
+    {
+    "id": 15,
+    "name": "Rank SSS",
+    "description": "Boost the 3 lower stats by 5%, when in crisis by 10%."
+    },
+    {
+    "id": 16,
+    "name": "Bad Luck",
+    "description": "everyone lose 5% precision, when in crisis further 5%."
+    },
+    {
+    "id": 17,
+    "name": "Demon pact",
+    "description": "Boost oscure attack by 15%."
+    },
+    {
+    "id": 18,
+    "name": "Divine blessing",
+    "description": "Heals every turn for 5% of max health."   
+    },
+    {
+    "id": 19,
+    "name": "Punch thrower",
+    "description": "Boost Punch attack by 15%."
+    }
+
+]

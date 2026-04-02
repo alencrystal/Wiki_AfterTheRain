@@ -7,6 +7,26 @@ document.addEventListener('DOMContentLoaded', () => {
   // Default changed to 0 as requested
   const defaultId = urlId ? Number(urlId) : 0;
 
+  const abilityCache = new Map();
+
+  async function loadAbilities() {
+    if (abilityCache.size > 0) return abilityCache;
+    try {
+      const res = await fetch('data/ability.json');
+      const abilities = await res.json();
+      abilities.forEach(a => abilityCache.set(Number(a.id), String(a.name)));
+    } catch (e) {
+      console.error('Errore caricamento ability.json', e);
+    }
+    return abilityCache;
+  }
+
+  async function resolveAbilityName(abilityId) {
+    if (abilityId == null) return '';
+    const map = await loadAbilities();
+    return map.get(Number(abilityId)) || '';
+  }
+
   // Espone una funzione globale `setCharacterById(id)` che carica i dati
   // e aggiorna il DOM. Ritorna una Promise (funzione async).
   window.setCharacterById = async function(id) {
@@ -104,9 +124,9 @@ document.addEventListener('DOMContentLoaded', () => {
       // Avvia l'aggiornamento delle resistenze usando i tipi del personaggio
       updateResistances(char.type || []);
 
-      // Abilità e descrizione: se non presenti, mostra stringa vuota
-      abilityEl.textContent = (char.ability || '');
-      descEl.textContent = char.description || '';
+      // altrimenti mostra la stringa già presente.
+      abilityEl.textContent = await resolveAbilityName(char.ability);
+      descEl.textContent = char.desc_eng || '';
 
       // Mappa le etichette visibili alle chiavi nei dati (HP -> hp, ...)
       const statMap = { HP: 'hp', ATK: 'atk', DEF: 'def', MATK: 'matk', MDEF: 'mdef', SPD: 'spd' };

@@ -359,31 +359,3 @@ body {
     transform: translate(3px, 3px);
     box-shadow: 3px 3px 0 #0e0b09;
 }
-
-/* === RESPONSIVE === */
-@media (max-width: 900px) {
-    .wiki-header {
-        flex-direction: column;
-        gap: 16px;
-    }
-    
-    .header-nav {
-        justify-content: center;
-    }
-    
-    .name-wrapper {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-    
-    .type-section, .ability-section {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-    
-    .nav-arrows {
-        position: static;
-        margin-top: 24px;
-        justify-content: center;
-    }
-}
