@@ -2,22 +2,22 @@
     {
     "id": 0,
     "name": "Helpful",
-    "description": "Boost the stats of the ally by 3%."
+    "description": "Boost all the stats of the allies by 2% except for their health."
     },
     {
     "id": 1,
     "name": "Silent Steps",
-    "description": "Boost first attack by 15%."
+    "description": "Boost damage by 10% against enemy in crisis."
     },
     {
     "id": 2,
     "name": "Positivity",
-    "description": "This character can't go in crisis."
+    "description": "This character can't go in crisis. ally in crisis heal 5% of their max health every turn."
     },
     {
     "id": 3,
     "name": "kind heart",
-    "description": "Healing, shield and buff are 5% stronger."
+    "description": "Healing, shield and buff are 10% stronger. If the target is in crisis, effects are 15% stronger instead."
     },
     {
     "id": 4,
@@ -27,17 +27,17 @@
     {
     "id": 5, 
     "name": "Sharp mind",
-    "description": "boost magic defense by 10%."
+    "description": "boost magic defense by 15%."
     },
     {
     "id": 6,
     "name": "Knight's honor",
-    "description": "Boost defense by 10%."
+    "description": "Boost defense by 15%."
     },
     {
     "id": 7,
     "name": "Overgrowth",
-    "description": "Boost health by 10%."
+    "description": "Boost health by 15%."
     },
     {
     "id": 8,
@@ -52,17 +52,17 @@
     {
     "id": 10,
     "name": "Wind's favor",
-    "description": "Boost speed by 10%."
+    "description": "Boost speed by 15%."
     },
     {
     "id": 11,
     "name": "Bug lord",
-    "description": "When hit by a grass attack, boost speed by 10%."
+    "description": "Boost grass and wind attacks by 10%."
     },
     {
     "id": 12,
     "name": "Omen of the forest",
-    "description": "Reduce everyone's defence by 5%, when in crisis further by 5%."
+    "description": "Reduce enemies speed by 5%."
     },
     {
     "id": 13,
@@ -72,7 +72,7 @@
     {
     "id": 14,
     "name": "Fire!!",
-    "description": "Boost fire attack by 15%."
+    "description": "Boost fire attack by 20%."
     },
     {
     "id": 15,
@@ -81,13 +81,13 @@
     },
     {
     "id": 16,
-    "name": "Bad Luck",
-    "description": "everyone lose 5% precision, when in crisis further 5%."
+    "name": "Basic of magic",
+    "description": "Boost fire, grass and water attack by 5%. Reduce fire, grass, water damage by 5%."
     },
     {
     "id": 17,
-    "name": "Demon pact",
-    "description": "Boost oscure attack by 15%."
+    "name": "Dark aura",
+    "description": "Boost dark attack by 20%."
     },
     {
     "id": 18,
@@ -97,7 +97,7 @@
     {
     "id": 19,
     "name": "Punch thrower",
-    "description": "Boost Punch attack by 15%."
+    "description": "Boost Punch attack by 20%."
     }
 
 ]
