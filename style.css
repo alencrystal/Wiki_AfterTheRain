@@ -181,7 +181,7 @@ body {
     z-index: 10;
 }
 
-.ability-section:hover .ability-tooltip {
+.ability-name:hover + .ability-tooltip {
     opacity: 1;
     transform: translateX(-50%) translateY(0);
 }

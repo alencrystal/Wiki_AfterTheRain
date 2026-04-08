@@ -22,7 +22,7 @@
     {
     "id": 4,
     "name": "Iron Will",
-    "description": "When in crisis, every turn boost random stat by 5%."
+    "description": "While in crisis, every turn boost random stat by 5%."
     },
     {
     "id": 5, 
@@ -42,12 +42,12 @@
     {
     "id": 8,
     "name": "Beast knight",
-    "description": "When in crisis, boost attack and magic attack by 10%."
+    "description": "While in crisis, boost attack and magic attack by 10%."
     },
     {    
     "id": 9,
     "name": "Never give up",
-    "description": "When in crisis, boost all stats by 5%."
+    "description": "While in crisis, boost all stats by 5% except for Health."
     },
     {
     "id": 10,
@@ -57,7 +57,7 @@
     {
     "id": 11,
     "name": "Bug lord",
-    "description": "Boost grass and wind attacks by 10%."
+    "description": "Boost grass and wind attacks by 15%."
     },
     {
     "id": 12,
@@ -67,7 +67,7 @@
     {
     "id": 13,
     "name": "Tenacity",
-    "description": "When in crisis, boost defense and magic defense by 10%."
+    "description": "While in crisis, boost defense and magic defense by 10%."
     },
     {
     "id": 14,
@@ -77,27 +77,37 @@
     {
     "id": 15,
     "name": "Rank SSS",
-    "description": "Boost the 3 lower stats by 5%, when in crisis by 10%."
+    "description": "Boost the 3 lower stats by 5%, while in crisis by 15%."
     },
     {
     "id": 16,
     "name": "Basic of magic",
-    "description": "Boost fire, grass and water attack by 5%. Reduce fire, grass, water damage by 5%."
+    "description": "Boost fire, grass and water attack by 10%. Reduce fire, grass, water damage by 10%."
     },
     {
     "id": 17,
+    "name": "lost forest's breath",
+    "description": "Boost attack by 7%, While in crisis instead Boost defence by 7% and heal 5% of their max health every turn."
+    },
+    {
+    "id": 18,
     "name": "Dark aura",
     "description": "Boost dark attack by 20%."
     },
     {
-    "id": 18,
+    "id": 19,
     "name": "Divine blessing",
     "description": "Heals every turn for 5% of max health."   
     },
     {
-    "id": 19,
+    "id": 20,
     "name": "Punch thrower",
     "description": "Boost Punch attack by 20%."
+    },
+    {
+    "id": 21,
+    "name": "relentless assault",
+    "description": "Boost damage by 25% if the target resists the attack type."
     }
 
 ]
