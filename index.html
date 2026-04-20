@@ -133,13 +133,28 @@
     </div>
     </div>
 
-    <!-- FRECCE DI NAVIGAZIONE -->
+    <!-- FRECCE DI NAVIGAZIONE e pulsanti sulla destra -->
+    <button id="type-calc-btn" class="navigation-btn">TYPE CALCULATOR</button>
     <div class="nav-arrows">
         <button id="next-btn" class="arrow-btn">NEXT ▶</button>
         <button id="prev-btn" class="arrow-btn">◀ PREV</button>
     </div>
+
+
     <script src="javascript/populate.js"></script>
     <script src="javascript/weakness.js"></script>
+    <script src="javascript/buttonmemory.js"></script>
     <script src="javascript/selectcharacter.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const typeCalc = document.getElementById('type-calc-btn');
+            if (!typeCalc) return;
+            typeCalc.addEventListener('click', () => {
+                const currentId = new URLSearchParams(window.location.search).get('id');
+                setPreviousCharacterUrl('index.html' + (currentId ? `?id=${currentId}` : ''));
+                window.location.href = 'type_calc.html';
+            });
+        });
+    </script>
 </body>
 </html>

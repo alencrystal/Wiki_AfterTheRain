@@ -101,13 +101,12 @@
     },
     {
     "id": 20,
-    "name": "Punch thrower",
-    "description": "Boost Punch attack by 20%."
+    "name": "relentless assault",
+    "description": "Boost damage by 25% if the target resists the attack type."
     },
     {
     "id": 21,
-    "name": "relentless assault",
-    "description": "Boost damage by 25% if the target resists the attack type."
+    "name": "Punch thrower",
+    "description": "Boost Punch attack by 20%."
     }
-
 ]

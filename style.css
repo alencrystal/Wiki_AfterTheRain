@@ -56,7 +56,7 @@ body {
     gap: 16px;
     background: #251e1b;
     border: 4px solid #4f3e35;
-    padding: 16px 20px;
+    padding: 10px 20px;
     box-shadow: 6px 6px 0 #0f0c0a inset, 6px 6px 0 #120e0c;
     flex-wrap: wrap;
 }
@@ -136,15 +136,15 @@ body {
 
 
 /* Color rules for types: apply to both .badge and .resist-badge via grouped selectors */
-.badge.water, .resist-badge.water { background: #1c3f56; border-color: #5e9bb8; box-shadow: 5px 5px 0 #0a1c26, inset 0 0 0 2px #8bbfd6; }
-.badge.fire, .resist-badge.fire { background: #5a1e16; border-color: #b36a4a; box-shadow: 5px 5px 0 #260c09, inset 0 0 0 2px #d9a58c; }
-.badge.grass, .resist-badge.grass { background: #2b4634; border-color: #7aa388; box-shadow: 5px 5px 0 #121f18, inset 0 0 0 2px #a7cbb2; }
-.badge.electro, .resist-badge.electro { background: #4a3f14; border-color: #bfa85a; box-shadow: 5px 5px 0 #1f1a08, inset 0 0 0 2px #e0cf9b; }
-.badge.ice, .resist-badge.ice { background: #2b4d55; border-color: #7fb3be; box-shadow: 5px 5px 0 #111f24, inset 0 0 0 2px #a9d4dd; }
-.badge.ground, .resist-badge.ground { background: #3e2e1b; border-color: #a08256; box-shadow: 5px 5px 0 #1c140b, inset 0 0 0 2px #c7ad85; }
-.badge.spirit, .resist-badge.spirit { background: #2a2436; border-color: #8f82b0; box-shadow: 5px 5px 0 #120f1a, inset 0 0 0 2px #b8aedd; }
-.badge.steel, .resist-badge.steel { background: #2f3238; border-color: #8f96a3; box-shadow: 5px 5px 0 #14161a, inset 0 0 0 2px #b9c0cc; }
-.badge.wind, .resist-badge.wind { background: #2f3f3a; border-color: #86b3a6; box-shadow: 5px 5px 0 #141f1c, inset 0 0 0 2px #b5d6cc; }
+.badge.water, .resist-badge.water, .type-btn-simple.water, .tipo-box-simple.water, .defending-type-header.water, .attacking-type-header.water { background: #1c3f56; border-color: #5e9bb8; box-shadow: 5px 5px 0 #0a1c26, inset 0 0 0 2px #8bbfd6; }
+.badge.fire, .resist-badge.fire, .type-btn-simple.fire, .tipo-box-simple.fire, .defending-type-header.fire, .attacking-type-header.fire { background: #5a1e16; border-color: #b36a4a; box-shadow: 5px 5px 0 #260c09, inset 0 0 0 2px #d9a58c; }
+.badge.grass, .resist-badge.grass, .type-btn-simple.grass, .tipo-box-simple.grass, .defending-type-header.grass, .attacking-type-header.grass { background: #2b4634; border-color: #7aa388; box-shadow: 5px 5px 0 #121f18, inset 0 0 0 2px #a7cbb2; }
+.badge.electro, .resist-badge.electro, .type-btn-simple.electro, .tipo-box-simple.electro, .defending-type-header.electro, .attacking-type-header.electro { background: #4a3f14; border-color: #bfa85a; box-shadow: 5px 5px 0 #1f1a08, inset 0 0 0 2px #e0cf9b; }
+.badge.ice, .resist-badge.ice, .type-btn-simple.ice, .tipo-box-simple.ice, .defending-type-header.ice, .attacking-type-header.ice { background: #2b4d55; border-color: #7fb3be; box-shadow: 5px 5px 0 #111f24, inset 0 0 0 2px #a9d4dd; }
+.badge.ground, .resist-badge.ground, .type-btn-simple.ground, .tipo-box-simple.ground, .defending-type-header.ground, .attacking-type-header.ground { background: #3e2e1b; border-color: #a08256; box-shadow: 5px 5px 0 #1c140b, inset 0 0 0 2px #c7ad85; }
+.badge.spirit, .resist-badge.spirit, .type-btn-simple.spirit, .tipo-box-simple.spirit, .defending-type-header.spirit, .attacking-type-header.spirit { background: #2a2436; border-color: #8f82b0; box-shadow: 5px 5px 0 #120f1a, inset 0 0 0 2px #b8aedd; }
+.badge.steel, .resist-badge.steel, .type-btn-simple.steel, .tipo-box-simple.steel, .defending-type-header.steel, .attacking-type-header.steel { background: #2f3238; border-color: #8f96a3; box-shadow: 5px 5px 0 #14161a, inset 0 0 0 2px #b9c0cc; }
+.badge.wind, .resist-badge.wind, .type-btn-simple.wind, .tipo-box-simple.wind, .defending-type-header.wind, .attacking-type-header.wind { background: #2f3f3a; border-color: #86b3a6; box-shadow: 5px 5px 0 #141f1c, inset 0 0 0 2px #b5d6cc; }
 
 
 /* Abilità  */
@@ -384,4 +384,258 @@ body {
 .arrow-btn:hover {
     transform: translate(3px, 3px);
     box-shadow: 3px 3px 0 #0e0b09;
+}
+
+/* === TYPE CALCULATOR BUTTON === */
+.navigation-btn {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: #2a1e1a;
+    color: #e6d6c2;
+    border: 4px solid #4a3c31;
+    padding: 12px 20px;
+    font-size: 10px;
+    font-family: 'Press Start 2P', monospace;
+    cursor: pointer;
+    box-shadow: 4px 4px 0 #0a0706;
+    transition: all 0.1s ease;
+    text-transform: uppercase;
+}
+
+.navigation-btn:hover {
+    box-shadow: 2px 2px 0 #0a0706;
+    transform: translate(2px, 2px);
+}
+
+/* ===== TYPE CALCULATOR STYLES (pixel art matching wiki) ===== */
+.type-calc-wrapper {
+    margin: 1rem 0;
+    padding: 0;
+    font-family: inherit;
+    width: 100%;
+}
+
+.type-calc-panels {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    margin-top: 1rem;
+}
+
+.type-selector-panel {
+    flex: 1;
+    min-width: 650px;
+    background: #1a1311;
+    border: 4px solid #4f3e35;
+    padding: 1rem;
+    box-shadow: 6px 6px 0 #0f0c0a inset, 6px 6px 0 #0b0706;
+}
+
+.result-panel-calc {
+    flex: 1;
+    min-width: 650px;
+    background: #1a1311;
+    border: 4px solid #4f3e35;
+    padding: 1rem;
+    box-shadow: 6px 6px 0 #0f0c0a inset, 6px 6px 0 #0b0706;
+}
+
+.types-grid-simple {
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    gap: 0.75rem;
+    margin: 1rem 0;
+}
+
+.type-btn-simple {
+    background: #2c1f1a;
+    border: 3px solid #6f523b;
+    padding: 0.5rem 0.8rem;
+    font-family: 'Press Start 2P', monospace;
+    font-size: 0.7rem;
+    color: #fae4bc;
+    text-transform: uppercase;
+    cursor: pointer;
+    box-shadow: 4px 4px 0 #0e0b09;
+    transition: 0.05s linear;
+    text-align: center;
+}
+
+.type-btn-simple:hover {
+    transform: translate(2px, 2px);
+    box-shadow: 2px 2px 0 #0e0b09;
+}
+
+.type-btn-simple.active {
+    box-shadow: inset 2px 2px 0 #0e0b09, 2px 2px 0 #0e0b09;
+    transform: translate(1px, 1px);
+}
+
+.type-btn-simple.deselected {
+    filter: grayscale(1) brightness(0.75);
+    opacity: 0.55;
+}
+
+.type-btn-simple.deselected:hover {
+    filter: none;
+    opacity: 1;
+    transform: translate(2px, 2px);
+}
+
+
+
+.clear-btn-simple {
+    background: #3a2a2a;
+    border: 3px solid #8b5a4a;
+    padding: 0.6rem 1rem;
+    font-family: 'Press Start 2P', monospace;
+    font-size: 0.7rem;
+    color: #ffdbb5;
+    cursor: pointer;
+    box-shadow: 4px 4px 0 #0e0b09;
+    margin-top: 1rem;
+    width: 100%;
+    text-transform: uppercase;
+}
+
+.clear-btn-simple:hover {
+    transform: translate(2px, 2px);
+    box-shadow: 2px 2px 0 #0e0b09;
+}
+
+.categoria-simple {
+    margin: 1.2rem 0 0.8rem 0;
+    padding: 0;
+    border-left: 4px solid #6f523b;
+    padding-left: 0.8rem;
+}
+
+.categoria-simple h3 {
+    font-size: 0.75rem;
+    margin: 0 0 0.5rem 0;
+    color: #dbbf9b;
+    font-family: 'Press Start 2P', monospace;
+    text-transform: uppercase;
+}
+
+.categoria-x4 {
+    background: rgba(255, 0, 0, 0.1); /* rosso scuro semi-trasparente */
+}
+
+.categoria-x2 {
+    background: rgba(255, 115, 0, 0.1); /* rosso semi-trasparente */
+}
+
+.categoria-x1 {
+    background: rgba(150, 148, 52, 0.1); /* grigio semi-trasparente */
+}
+
+.categoria-x05 {
+    background: rgba(0, 255, 13, 0.1); /* verde semi-trasparente */
+}
+
+.categoria-x025 {
+    background: rgba(0, 128, 0, 0.1); /* blu semi-trasparente */
+}
+
+.categoria-x0 {
+    background: rgba(0, 0, 0, 0.1); /* nero semi-trasparente */
+}
+
+.tipi-container-simple {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+    margin-top: 0.3rem;
+}
+
+.tipo-box-simple {
+    background: #251e1b;
+    border: 2px solid #6f523b;
+    padding: 0.3rem 0.8rem;
+    font-size: 0.65rem;
+    font-family: 'Press Start 2P', monospace;
+    text-transform: uppercase;
+    color: #fae4bc;
+    box-shadow: 2px 2px 0 #0e0b09;
+}
+
+/* Tabella dei moltiplicatori (pixel style) */
+.multiplier-table-container {
+    margin-top: 2rem;
+    padding-top: 1rem;
+    border-top: 4px solid #4f3e35;
+    margin-inline: auto;
+}
+
+.multiplier-title {
+    font-size: 0.8rem;
+    margin-bottom: 1rem;
+    color: #ffd966;
+    font-family: 'Press Start 2P', monospace;
+    text-align: center;
+}
+
+.table-wrapper {
+    overflow-x: auto;
+    margin-top: 0.5rem;
+    border: 4px solid #4f3e35;
+    background: #130e0c;
+    padding: 0.5rem;
+    box-shadow: inset 2px 2px 0 #0f0c0a, 6px 6px 0 #0b0706;
+}
+
+.multiplier-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.7rem;
+    font-family: 'Press Start 2P', monospace;
+    background: #1a1311;
+}
+
+.multiplier-table th,
+.multiplier-table td {
+    padding: 0.6rem 0.3rem;
+    text-align: center;
+    border: 2px solid #4f3e35;
+}
+
+.multiplier-table th {
+    background: #2c1f1a;
+    color: #ffd966;
+    font-weight: normal;
+    text-transform: uppercase;
+    font-size: 0.65rem;
+}
+
+.multiplier-table td {
+    color: #e6d6c2;
+    text-shadow: 1px 1px 0 #0e0b09;
+}
+
+.multiplier-table .x05 { background: #7a2a2a; color: #ffcccc; font-weight: bold; box-shadow: inset 0 0 0 1px #ffaaaa; }
+.multiplier-table .x2 { background: #2a4a2a; color: #fff0e0; font-weight: bold; box-shadow: inset 0 0 0 1px #aaffae; }
+.multiplier-table .x1 { background: #464646; color: #ccffcc; box-shadow: inset 0 0 0 1px #cccccc; }
+.multiplier-table .x0 { background: #3a2a5a; color: #ddbbff; font-weight: bold; box-shadow: inset 0 0 0 1px #d9a8ff; }
+
+.defending-type-header {
+    background: #3a2a24 ;
+    color: #ffd966;
+    min-width: 90px;
+}
+.attacking-type-header {
+    background: #3a2a24;
+    color: #ffd966;
+}
+.defending-type-header.water, .attacking-type-header.water,
+.defending-type-header.fire, .attacking-type-header.fire,
+.defending-type-header.grass, .attacking-type-header.grass,
+.defending-type-header.electro, .attacking-type-header.electro,
+.defending-type-header.ice, .attacking-type-header.ice,
+.defending-type-header.ground, .attacking-type-header.ground,
+.defending-type-header.spirit, .attacking-type-header.spirit,
+.defending-type-header.steel, .attacking-type-header.steel,
+.defending-type-header.wind, .attacking-type-header.wind {
+    color: #faf3e5;
 }

@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="it" spellcheck="false">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+    <link rel="icon" type="image/png" href="images/site_icon.svg">
+    <link rel="stylesheet" href="style.css?v=20250224">
+    <title>AfterTheRain Wiki - Type Calculator</title>
+</head>
+<body>
+    <div class="wiki-container">
+            <div class="type-calc-wrapper">
+                <h2 style="margin-bottom: 0.5rem; font-family: 'Press Start 2P'; font-size: 1.2rem;">Weakness & Resistance Calculator</h2>
+                <div class="type-calc-panels">
+                    <div class="type-selector-panel">
+                        <div class="type-selection-block">
+                            <strong style="font-size:0.8rem;">FIRST TYPE</strong>
+
+                            <div class="types-grid-simple" id="type1-buttons-calc"></div>
+                        </div>
+                        <div class="type-selection-block" style="margin-top: 1.5rem;">
+                            <strong style="font-size:0.8rem;">SECOND TYPE</strong>
+
+                            <div class="types-grid-simple" id="type2-buttons-calc"></div>
+                        </div>
+                        <button class="clear-btn-simple" id="reset-btn-calc">RESET</button>
+                    </div>
+                    <div class="result-panel-calc">
+                        <strong style="font-size:0.8rem;">DAMAGE MULTIPLIERS</strong>
+                        <div id="risultato-calc" style="margin-top: 1rem;"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="multiplier-table-container" id="multiplier-table-container" style="display: none;">
+                <div class="multiplier-title">TYPE MATCHUP CHART</div>
+                <div class="table-wrapper">
+                    <table class="multiplier-table" id="multiplier-table">
+                        <thead id="table-head"></thead>
+                        <tbody id="table-body"></tbody>
+                    </table>
+                </div>
+            </div>
+    </div>
+    <button id="close-table-btn" class="navigation-btn">CLOSE THE TABLE</button>
+
+    <script src="javascript/weakness.js"></script>
+    <script src="javascript/buttonmemory.js"></script>
+    <script>
+        // ======================== TYPE CALC LOGIC (identico a prima, nessuna modifica) ========================
+        let tipoSelezionato1 = null;
+        let tipoSelezionato2 = null;
+        let listaTipiGlobal = [];
+
+        async function ottieniListaTipi() {
+            if (listaTipiGlobal.length > 0) return listaTipiGlobal;
+            try {
+                await window.loadTypeChart();
+                const testResult = await window.computeTypeEffectiveness('fire');
+                if (testResult && testResult.multipliers) {
+                    listaTipiGlobal = Object.keys(testResult.multipliers);
+                    console.log('Tipi caricati:', listaTipiGlobal);
+                    return listaTipiGlobal;
+                }
+            } catch (error) {
+                console.error('Errore nel recupero dei tipi:', error);
+            }
+            console.warn('Usando lista tipi di fallback');
+            listaTipiGlobal = ["fire", "water", "grass", "electro", "ice", "ground", "wind", "steel", "spirit"];
+            return listaTipiGlobal;
+        }
+
+        async function generaPulsantiTipi() {
+            const container1 = document.getElementById('type1-buttons-calc');
+            const container2 = document.getElementById('type2-buttons-calc');
+            if (!container1 || !container2) return;
+            const tipi = await ottieniListaTipi();
+            if (tipi.length === 0) {
+                document.getElementById('risultato-calc').innerHTML = '<p style="color: red;">❌ Error: Could not load types from data/types.json</p>';
+                return;
+            }
+            container1.innerHTML = '';
+            container2.innerHTML = '';
+            tipi.forEach(tipo => {
+                const btn1 = document.createElement('button');
+                btn1.textContent = tipo;
+                btn1.className = `type-btn-simple ${tipo.toLowerCase()}`;
+                btn1.setAttribute('data-tipo', tipo);
+                btn1.addEventListener('click', (e) => { e.preventDefault(); selezionaTipo(1, tipo); });
+                container1.appendChild(btn1);
+                
+                const btn2 = document.createElement('button');
+                btn2.textContent = tipo;
+                btn2.className = `type-btn-simple ${tipo.toLowerCase()}`;
+                btn2.setAttribute('data-tipo', tipo);
+                btn2.addEventListener('click', (e) => { e.preventDefault(); selezionaTipo(2, tipo); });
+                container2.appendChild(btn2);
+            });
+            aggiornaStatiPulsanti();
+            await generaTabellaMoltiplicatori();
+        }
+        
+        async function generaTabellaMoltiplicatori() {
+            const tipi = await ottieniListaTipi();
+            if (tipi.length === 0) return;
+            const tableHead = document.getElementById('table-head');
+            const tableBody = document.getElementById('table-body');
+            if (!tableHead || !tableBody) return;
+            let headerHtml = '<tr><th>Defender<br>/<br>Attacker</th>';
+            tipi.forEach(tipo => { headerHtml += `<th class="defending-type-header ${tipo.toLowerCase()}">${tipo}</th>`; });
+            headerHtml += '</tr>';
+            tableHead.innerHTML = headerHtml;
+            let bodyHtml = '';
+            for (let attaccante of tipi) {
+                bodyHtml += `<tr><th class="attacking-type-header ${attaccante}">${attaccante}</th>`;
+                for (let difensore of tipi) {
+                    try {
+                        const result = await window.computeTypeEffectiveness(difensore);
+                        const multiplier = result.multipliers[attaccante] ?? 1;
+                        let classe = '', displayValue = '';
+                        if (multiplier >= 2) { classe = 'x2'; displayValue = '2'; }
+                        else if (multiplier === 1) { classe = 'x1'; displayValue = '1'; }
+                        else if (multiplier === 0.5) { classe = 'x05'; displayValue = '0.5'; }
+                        else if (multiplier === 0) { classe = 'x0'; displayValue = '0'; }
+                        else { classe = 'x1'; displayValue = `x${multiplier}`; }
+                        bodyHtml += `<td class="${classe}">${displayValue}</td>`;
+                    } catch (e) { bodyHtml += `<td class="x1">?</td>`; }
+                }
+                bodyHtml += `</tr>`;
+            }
+            tableBody.innerHTML = bodyHtml;
+            document.getElementById('multiplier-table-container').style.display = 'block';
+        }
+        
+        function aggiornaStatiPulsanti() {
+            const hasSelected = !!tipoSelezionato1 || !!tipoSelezionato2;
+            document.querySelectorAll('#type1-buttons-calc .type-btn-simple').forEach(btn => {
+                const tipoBtn = btn.getAttribute('data-tipo');
+                const isActive = tipoSelezionato1 === tipoBtn;
+                btn.classList.toggle('active', isActive);
+                btn.classList.toggle('deselected', hasSelected && !isActive);
+            });
+            document.querySelectorAll('#type2-buttons-calc .type-btn-simple').forEach(btn => {
+                const tipoBtn = btn.getAttribute('data-tipo');
+                const isActive = tipoSelezionato2 === tipoBtn;
+                btn.classList.toggle('active', isActive);
+                btn.classList.toggle('deselected', hasSelected && !isActive);
+            });
+        }
+        
+        function aggiornaInfoSelezione() {
+            const info1 = document.getElementById('type1-info-calc');
+            const info2 = document.getElementById('type2-info-calc');
+        }
+        
+        async function calcolaDebolezzeEResistenze() {
+            const t1 = tipoSelezionato1;
+            const t2 = tipoSelezionato2;
+            const risultatoDiv = document.getElementById("risultato-calc");
+            if (!t1) { risultatoDiv.innerHTML = "<p>Select at least one type.</p>"; return; }
+            try {
+                const result = await window.computeTypeEffectiveness(t1, t2);
+                const groups = result.groups;
+                let html = '';
+                if (groups['4']?.length) { html += `<div class="categoria-simple categoria-x4"><h3> x4 </h3><div class="tipi-container-simple">` + groups['4'].map(t => `<div class="tipo-box-simple ${t.toLowerCase()}">${t}</div>`).join('') + `</div></div>`; }
+                if (groups['2']?.length) { html += `<div class="categoria-simple categoria-x2"><h3> x2 </h3><div class="tipi-container-simple">` + groups['2'].map(t => `<div class="tipo-box-simple ${t.toLowerCase()}">${t}</div>`).join('') + `</div></div>`; }
+                if (groups['1']?.length) { html += `<div class="categoria-simple categoria-x1"><h3> x1 </h3><div class="tipi-container-simple">` + groups['1'].map(t => `<div class="tipo-box-simple ${t.toLowerCase()}">${t}</div>`).join('') + `</div></div>`; }
+                if (groups['0.5']?.length) { html += `<div class="categoria-simple categoria-x05"><h3> x0.5 </h3><div class="tipi-container-simple">` + groups['0.5'].map(t => `<div class="tipo-box-simple ${t.toLowerCase()}">${t}</div>`).join('') + `</div></div>`; }
+                if (groups['0.25']?.length) { html += `<div class="categoria-simple categoria-x025"><h3> x0.25 </h3><div class="tipi-container-simple">` + groups['0.25'].map(t => `<div class="tipo-box-simple ${t.toLowerCase()}">${t}</div>`).join('') + `</div></div>`; }
+                if (groups['0']?.length) { html += `<div class="categoria-simple categoria-x0"><h3> x0 </h3><div class="tipi-container-simple">` + groups['0'].map(t => `<div class="tipo-box-simple ${t.toLowerCase()}">${t}</div>`).join('') + `</div></div>`; }
+                if (!html) html = "<p>No special weaknesses or resistances (all neutral).</p>";
+                risultatoDiv.innerHTML = html;
+            } catch (error) {
+                console.error(error);
+                risultatoDiv.innerHTML = "<p>❌ Error calculating type effectiveness.</p>";
+            }
+        }
+        
+        function selezionaTipo(slot, tipo) {
+            if (slot === 1) tipoSelezionato1 = (tipoSelezionato1 === tipo) ? null : tipo;
+            else tipoSelezionato2 = (tipoSelezionato2 === tipo) ? null : tipo;
+            aggiornaStatiPulsanti();
+            aggiornaInfoSelezione();
+            calcolaDebolezzeEResistenze();
+        }
+        
+        function resetSelezioni() {
+            tipoSelezionato1 = null;
+            tipoSelezionato2 = null;
+            aggiornaStatiPulsanti();
+            aggiornaInfoSelezione();
+            calcolaDebolezzeEResistenze();
+        }
+        
+        async function initTypeCalculator() {
+            const risultatoDiv = document.getElementById("risultato-calc");
+            if (risultatoDiv) risultatoDiv.innerHTML = "<p>Loading type data...</p>";
+            try {
+                if (!window.computeTypeEffectiveness) throw new Error('weakness.js not loaded');
+                await window.loadTypeChart();
+                await generaPulsantiTipi();
+                const resetBtn = document.getElementById('reset-btn-calc');
+                if (resetBtn) {
+                    const newReset = resetBtn.cloneNode(true);
+                    resetBtn.parentNode.replaceChild(newReset, resetBtn);
+                    newReset.addEventListener('click', (e) => { e.preventDefault(); resetSelezioni(); });
+                }
+                resetSelezioni();
+            } catch (error) {
+                console.error(error);
+                if (risultatoDiv) risultatoDiv.innerHTML = '<p style="color: red;">❌ Initialization error. Check data/types.json and weakness.js</p>';
+            }
+        }
+        
+        if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', initTypeCalculator);
+        else initTypeCalculator();
+    </script>
+    <script>
+        (function preserveCloseButton() {
+            document.addEventListener('DOMContentLoaded', () => {
+                const closeBtn = document.getElementById('close-table-btn');
+                if (!closeBtn) return;
+                closeBtn.addEventListener('click', () => {
+                    const previous = getPreviousCharacterUrl();
+                    window.location.href = previous ? previous : 'index.html';
+                });
+            });
+        })();
+    </script>
+</body>
+</html>

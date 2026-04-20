@@ -175,8 +175,8 @@
     "type": ["steel", "grass"],
     "stats": { "hp": 10, "atk": 12, "def": 15, "matk": 7, "mdef": 9, "spd": 7 },
     "ability": 17,
-    "desc_eng": "",
-    "desc_ita": "",
+    "desc_eng": "A hero of the elven realm, he has fought in the greatest battles in history. His experience on the battlefield is unmatched.",
+    "desc_ita": "Un eroe del regno elfico, ha combattuto nelle più grandi battaglie della storia. La sua esperienza sul campo è ineguagliabile.",
     "sprite": "len"
   },
   {
@@ -201,10 +201,20 @@
   },
   {
     "id": 20,
+    "name": "Deygor",
+    "type": ["steel", "fire"],
+    "stats": { "hp": 11, "atk": 14, "def": 9, "matk": 8, "mdef": 10, "spd": 8 },
+    "ability": 20,
+    "desc_eng": "One of the greatest monster hunters, skilled in hand-to-hand combat, there is no fight he cannot win.",
+    "desc_ita": "Uno dei più grandi cacciatori di mostri, abile nel combattimento corpo a corpo, non c'è scontro che non possa vincere.",
+    "sprite": "deygor"
+  },
+  {
+    "id": 21,
     "name": "Theos",
     "type": ["ground", "ice"],
     "stats": { "hp": 11, "atk": 13, "def": 9, "matk": 7, "mdef": 10, "spd": 10 },
-    "ability": 20,
+    "ability": 21,
     "desc_eng": "A young man who owns a tavern outside the city. His favorite part of the job is mediating disputes in the inn.",
     "desc_ita": "Un ragazzo che possiede una taverna fuori città. La parte preferita del suo lavoro è placare le risse nella locanda.",
     "sprite": "theos"
