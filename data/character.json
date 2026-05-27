@@ -278,6 +278,26 @@
     "desc_eng": "A gambling addict, he bases every decision on the roll of a dice, this seems to influence the outcome, or perhaps it's just luck.",
     "desc_ita": "Un malato di gioco d'azzardo, basa ogni decisione sul lancio di un dado, questo sembra condizioni il risultato, o forse è solo fortuna.",
     "sprite": "rolland"
+  },
+  {
+    "id": 28,
+    "name": "Delphion",
+    "type": ["water", "steel"],
+    "stats": { "hp": 11, "atk": 10, "def": 7, "matk": 10, "mdef": 14, "spd": 11 },
+    "ability": 29,
+    "desc_eng": "A sea demon, born from a raging storm, he is able to manipulate water and tides, he dislikes remaining on land.",
+    "desc_ita": "Un demone del mare, è nato da una tempesta marina ed è in grado di manipolare l'acqua e le maree, non ama stare sulla terraferma.",
+    "sprite": "delphion"
+  },
+  {
+    "id": 29,
+    "name": "Brom",
+    "type": ["electro", "ground"],
+    "stats": { "hp": 8, "atk": 14, "def": 14, "matk": 8, "mdef": 8, "spd": 11 },
+    "ability": 24,
+    "desc_eng": "he most renowned and respected blacksmith among adventurers, he is able to forge perfect weapons and armor of any kind, and even his prices are not bad!",
+    "desc_ita": "Il fabbro più stimato e conosciuto dagli avventurieri, è in grado di forgiare armi e armature perfette di qualunque genere, anche i suoi prezzi non sono male!",
+    "sprite": "brom"
   }
 
   

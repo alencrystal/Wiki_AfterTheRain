@@ -143,5 +143,10 @@
     "id": 28,
     "name": "Evil eye ward",
     "description": "The stats of this character cannot be reduced."
+    },
+    {
+    "id": 29,
+    "name": "Crisis point",
+    "description": "When hit a character in crisis, that character lose 5% attack or magic attack depending on the attack type."
     }
 ]
