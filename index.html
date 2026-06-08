@@ -135,6 +135,9 @@
 
     <!-- FRECCE DI NAVIGAZIONE e pulsanti sulla destra -->
     <button id="type-calc-btn" class="navigation-btn">TYPE CALCULATOR</button>
+    <div class="search-box-container">
+        <input id="character-id-search" class="id-search-input" type="search" autocomplete="off" placeholder="SEARCH" aria-label="Search character by ID or name">
+    </div>
     <div class="nav-arrows">
         <button id="next-btn" class="arrow-btn">NEXT ▶</button>
         <button id="prev-btn" class="arrow-btn">◀ PREV</button>
@@ -153,6 +156,104 @@
                 const currentId = new URLSearchParams(window.location.search).get('id');
                 setPreviousCharacterUrl('index.html' + (currentId ? `?id=${currentId}` : ''));
                 window.location.href = 'type_calc.html';
+            });
+
+            const searchInput = document.getElementById('character-id-search');
+            if (!searchInput) return;
+
+            function normalizeText(value) {
+                return String(value || '')
+                    .toLowerCase()
+                    .trim()
+                    .normalize('NFD')
+                    .replace(/[^\w\s]/g, '')
+                    .replace(/\s+/g, ' ');
+            }
+
+            function levenshteinDistance(a, b) {
+                const matrix = Array.from({ length: a.length + 1 }, () => new Array(b.length + 1).fill(0));
+
+                for (let i = 0; i <= a.length; i += 1) matrix[i][0] = i;
+                for (let j = 0; j <= b.length; j += 1) matrix[0][j] = j;
+
+                for (let i = 1; i <= a.length; i += 1) {
+                    for (let j = 1; j <= b.length; j += 1) {
+                        const cost = a[i - 1] === b[j - 1] ? 0 : 1;
+                        matrix[i][j] = Math.min(
+                            matrix[i - 1][j] + 1,
+                            matrix[i][j - 1] + 1,
+                            matrix[i - 1][j - 1] + cost
+                        );
+                    }
+                }
+
+                return matrix[a.length][b.length];
+            }
+
+            function findCharacterMatch(characters, query) {
+                if (!Array.isArray(characters) || !query) return null;
+
+                const normalizedQuery = normalizeText(query);
+                const idValue = Number(query);
+
+                if (Number.isInteger(idValue) && idValue >= 0) {
+                    const exactIdMatch = characters.find(character => Number(character.id) === idValue);
+                    if (exactIdMatch) return exactIdMatch;
+                }
+
+                const prefixMatches = characters.filter((character) => {
+                    const name = normalizeText(character.name || '');
+                    return name.startsWith(normalizedQuery);
+                });
+
+                if (prefixMatches.length > 0) {
+                    return prefixMatches[0];
+                }
+
+                const containsMatches = characters.filter((character) => {
+                    const name = normalizeText(character.name || '');
+                    return name.includes(normalizedQuery);
+                });
+
+                if (containsMatches.length > 0) {
+                    return containsMatches[0];
+                }
+
+                const ranked = characters
+                    .map((character) => {
+                        const name = normalizeText(character.name || '');
+                        return {
+                            character,
+                            distance: levenshteinDistance(normalizedQuery, name)
+                        };
+                    })
+                    .sort((a, b) => a.distance - b.distance);
+
+                return ranked[0] ? ranked[0].character : null;
+            }
+
+            searchInput.addEventListener('keydown', async (event) => {
+                if (event.key !== 'Enter') return;
+
+                event.preventDefault();
+
+                const rawValue = searchInput.value.trim();
+                if (!rawValue) return;
+
+                try {
+                    const response = await fetch('data/character.json');
+                    const characters = await response.json();
+                    const match = findCharacterMatch(characters, rawValue);
+
+                    if (!match) return;
+
+                    const targetId = Number(match.id);
+                    const targetUrl = new URL(window.location.href);
+                    targetUrl.searchParams.set('id', String(targetId));
+                    window.location.href = `${targetUrl.pathname}?id=${targetId}`;
+                } catch (error) {
+                    console.error('Errore nel caricamento del personaggio via ricerca:', error);
+                }
             });
         });
     </script>

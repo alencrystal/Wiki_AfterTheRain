@@ -408,7 +408,42 @@ body {
     transform: translate(2px, 2px);
 }
 
-/* ===== TYPE CALCULATOR STYLES (pixel art matching wiki) ===== */
+.search-box-container {
+    position: fixed;
+    top: 72px;
+    right: 20px;
+    z-index: 100;
+}
+
+.id-search-input {
+    width: 198px;
+    padding: 12px 20px;
+    background: #2a1e1a;
+    color: #e6d6c2;
+    border: 4px solid #4a3c31;
+    box-shadow: 4px 4px 0 #0a0706;
+    font-size: 10px;
+    font-family: 'Press Start 2P', monospace;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.id-search-input::placeholder {
+    color: #e6d6c2;
+}
+
+.id-search-input:hover {
+    box-shadow: 2px 2px 0 #0a0706;
+    transform: translate(2px, 2px);
+}
+
+.id-search-input:focus {
+    outline: none;
+    box-shadow: 2px 2px 0 #0a0706;
+    transform: translate(2px, 2px);
+}
+
+/* ===== TYPE CALCULATOR STYLES ===== */
 .type-calc-wrapper {
     margin: 1rem 0;
     padding: 0;

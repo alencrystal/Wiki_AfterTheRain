@@ -298,6 +298,36 @@
     "desc_eng": "he most renowned and respected blacksmith among adventurers, he is able to forge perfect weapons and armor of any kind, and even his prices are not bad!",
     "desc_ita": "Il fabbro più stimato e conosciuto dagli avventurieri, è in grado di forgiare armi e armature perfette di qualunque genere, anche i suoi prezzi non sono male!",
     "sprite": "brom"
+  },
+  {
+    "id": 30,
+    "name": "Tordek",
+    "type": ["ground"],
+    "stats": { "hp": 15, "atk": 8, "def": 12, "matk": 8, "mdef": 10, "spd": 10 },
+    "ability": 30,
+    "desc_eng": "",
+    "desc_ita": "",
+    "sprite": "tordek"
+  },
+  {
+    "id": 31,
+    "name": "Dastan",
+    "type": ["grass"],
+    "stats": { "hp": 15, "atk": 8, "def": 10, "matk": 8, "mdef": 10, "spd": 12 },
+    "ability": 31,
+    "desc_eng": "",
+    "desc_ita": "",
+    "sprite": "dastan"
+  },
+  {
+    "id": 32,
+    "name": "Helmthryth",
+    "type": ["spirit"],
+    "stats": { "hp": 8, "atk": 14, "def": 7, "matk": 14, "mdef": 7, "spd": 13 },
+    "ability": 28,
+    "desc_eng": "",
+    "desc_ita": "",
+    "sprite": "helmthryth"
   }
 
   

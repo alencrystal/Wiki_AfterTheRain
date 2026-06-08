@@ -148,5 +148,16 @@
     "id": 29,
     "name": "Crisis point",
     "description": "When hit a character in crisis, that character lose 5% attack or magic attack depending on the attack type."
+    },
+    {
+    "id": 30,
+    "name": "Plating armor",
+    "description": "When hit by an attack, gain 5% defense."
+    },
+    {
+    "id": 31,
+    "name": "Disengage",
+    "description": "When hit by an attack, gain 5% speed."
     }
+
 ]

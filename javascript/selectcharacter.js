@@ -1,7 +1,7 @@
 // Gestisce i pulsanti PREV/NEXT e chiama setCharacterById(id)
 document.addEventListener('DOMContentLoaded', () => {
   const MIN_ID = 0;
-  const MAX_ID = 30;
+  const MAX_ID = 40;
 
   // Legge id dalla query string se presente, altrimenti 0
   const urlId = new URLSearchParams(location.search).get('id');
