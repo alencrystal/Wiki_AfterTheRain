@@ -282,7 +282,7 @@
   {
     "id": 28,
     "name": "Delphion",
-    "type": ["water", "steel"],
+    "type": ["water", "ground"],
     "stats": { "hp": 11, "atk": 10, "def": 7, "matk": 10, "mdef": 14, "spd": 11 },
     "ability": 29,
     "desc_eng": "A sea demon, born from a raging storm, he is able to manipulate water and tides, he dislikes remaining on land.",
@@ -328,7 +328,48 @@
     "desc_eng": "",
     "desc_ita": "",
     "sprite": "helmthryth"
+  },
+  {
+    "id": 33,
+    "name": "Mithron",
+    "type": ["steel", "electro"],
+    "stats": { "hp": 11, "atk": 8, "def": 17, "matk": 8, "mdef": 9, "spd": 10 },
+    "ability": 28,
+    "desc_eng": "",
+    "desc_ita": "",
+    "sprite": "mithron"
+  },
+  {
+    "id": 34,
+    "name": "Pigmento",
+    "type": ["wind"],
+    "stats": { "hp": 13, "atk": 7, "def": 8, "matk": 13, "mdef": 13, "spd": 9 },
+    "ability": 32,
+    "desc_eng": "",
+    "desc_ita": "",
+    "sprite": "pigmento"
+  },
+  {
+    "id": 35,
+    "name": "Kitetsu",
+    "type": ["water", "steel"],
+    "stats": { "hp": 8, "atk": 13, "def": 13, "matk": 7, "mdef": 9, "spd": 13 },
+    "ability": 33,
+    "desc_eng": "",
+    "desc_ita": "proveniente da un regno sottomarino, gira sempre con la sua chela, per questo è soprannominato da tutti 'la chela'.",
+    "sprite": "kitetsu"
+  },
+  {
+    "id": 36,
+    "name": "Core",
+    "type": ["electro", "grass"],
+    "stats": { "hp": 11, "atk": 10, "def": 11, "matk": 7, "mdef": 10, "spd": 14 },
+    "ability": 34,
+    "desc_eng": "",
+    "desc_ita": "ballerina",
+    "sprite": "core"
   }
+
 
   
 ]

@@ -158,6 +158,21 @@
     "id": 31,
     "name": "Disengage",
     "description": "When hit by an attack, gain 5% speed."
+    },
+    {
+    "id": 32,
+    "name": "Colorful world",
+    "description": "When this character hit a target, that target gain the type of the attack if the target doesn't have that type."
+    },
+    {
+    "id": 33,
+    "name": "Water ward",
+    "description": "Prevent damage and gain health from water attacks."
+    },
+    {
+    "id": 34,
+    "name": "Electro dance",
+    "description": "For the whole turn after changing position, redirect Electro attacks to this character and halve the damage taken. If hit by an Electro attack during this turn, gain 5% Speed."
     }
 
 ]
