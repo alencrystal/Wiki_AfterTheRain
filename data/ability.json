@@ -162,7 +162,7 @@
     {
     "id": 32,
     "name": "Colorful world",
-    "description": "When this character hit a target, that target gain the type of the attack if the target doesn't have that type."
+    "description": "When this character hit a target with a non-damaging move, that target gain the type of the attack if the target doesn't have that type."
     },
     {
     "id": 33,

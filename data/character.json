@@ -35,8 +35,8 @@
     "type": ["fire"],
     "stats": { "hp": 12, "atk": 10, "def": 8, "matk": 13, "mdef": 9, "spd": 11 },
     "ability": 3,
-    "desc_eng": "One of the two princesses of the kingdom, sweet and affectionate, is known as the kingdom’s angel for the purity of her soul.",
-    "desc_ita": "Una delle due principesse del regno, dolce e affettuosa, viene definita l'angelo del regno per la sua purezza d'animo.",
+    "desc_eng": "One of the twin sisters who run the kingdom's most famous tavern. Sweet like a mother, sheis described as an angel due to the purity of her soul.",
+    "desc_ita": "Una delle due gemelle a gestire la taverna più famosa del regno. Dolce come una madre, viene definita un angelo per la sua purezza d'animo.",
     "sprite": "debryl"
   },
   {
@@ -45,8 +45,8 @@
     "type": ["grass"],
     "stats": { "hp": 10, "atk": 9, "def": 8, "matk": 11, "mdef": 9, "spd": 16 },
     "ability": 4,
-    "desc_eng": "One of the two princesses of the kingdom, determined as she is intelligent. Despite her delicate appearance, she is a formidable fighter.",
-    "desc_ita": "Una delle due principesse del regno, determinata quanto intelligente. Nonostante l'aspetto delicato, è una combattente formidabile.",
+    "desc_eng": "One of the twins who runs the region's most famous tavern, she is a very determined. Despite her delicate appearance, she is a formidable fighter.",
+    "desc_ita": "Una delle due gemelle a gestire la taverna più famosa del regno, è molto determinata. Nonostante l'aspetto delicato, è una combattente formidabile.",
     "sprite": "elaris"
   },
   {
@@ -305,8 +305,8 @@
     "type": ["ground"],
     "stats": { "hp": 15, "atk": 8, "def": 12, "matk": 8, "mdef": 10, "spd": 10 },
     "ability": 30,
-    "desc_eng": "",
-    "desc_ita": "",
+    "desc_eng": "One of the mountain twins. His main line is: 'When the going gets tough, the tough get going.'",
+    "desc_ita": "uno dei gemelli della montagna, il suo motto è: 'quando il gioco si fa duro, i duri cominciano a giocare'",
     "sprite": "tordek"
   },
   {
@@ -315,8 +315,8 @@
     "type": ["grass"],
     "stats": { "hp": 15, "atk": 8, "def": 10, "matk": 8, "mdef": 10, "spd": 12 },
     "ability": 31,
-    "desc_eng": "",
-    "desc_ita": "",
+    "desc_eng": "One of the mountain twins. His catchphrase is: 'It's not cowardice, it's a strategic repositioning.'",
+    "desc_ita": "uno dei gemelli della montagna, la sua frase d'effetto è: 'non è codardia: è ridistribuzione strategica della posizione'",
     "sprite": "dastan"
   },
   {
@@ -335,8 +335,8 @@
     "type": ["steel", "electro"],
     "stats": { "hp": 11, "atk": 8, "def": 17, "matk": 8, "mdef": 9, "spd": 10 },
     "ability": 28,
-    "desc_eng": "",
-    "desc_ita": "",
+    "desc_eng": "An automaton built by an ancient civilization has only recently awakened and has yet to understand its task.",
+    "desc_ita": "Un automa costruito da un'antica civiltà, si è risvegliato solo di recente e deve ancora capire il suo compito.",
     "sprite": "mithron"
   },
   {
@@ -345,8 +345,8 @@
     "type": ["wind"],
     "stats": { "hp": 13, "atk": 7, "def": 8, "matk": 13, "mdef": 13, "spd": 9 },
     "ability": 32,
-    "desc_eng": "",
-    "desc_ita": "",
+    "desc_eng": "A famous painter, he paints so well that his paintings seem to come alive. 'Every color builds a story, discover it'.",
+    "desc_ita": "Un pittore famosissimo, dipinge così bene che sembra che i suoi quadri prendano vita. 'ogni colore costudisce una storia, scopriamola'.",
     "sprite": "pigmento"
   },
   {
@@ -355,8 +355,8 @@
     "type": ["water", "steel"],
     "stats": { "hp": 8, "atk": 13, "def": 13, "matk": 7, "mdef": 9, "spd": 13 },
     "ability": 33,
-    "desc_eng": "",
-    "desc_ita": "proveniente da un regno sottomarino, gira sempre con la sua chela, per questo è soprannominato da tutti 'la chela'.",
+    "desc_eng": "Hailing from an underwater kingdom, this samurai always carries his claw around; that is why everyone calls him 'The Claw.'",
+    "desc_ita": "proveniente da un regno sottomarino, questo samurai gira sempre con la sua chela, per questo è soprannominato da tutti 'la chela'.",
     "sprite": "kitetsu"
   },
   {
@@ -365,8 +365,8 @@
     "type": ["electro", "grass"],
     "stats": { "hp": 11, "atk": 10, "def": 11, "matk": 7, "mdef": 10, "spd": 14 },
     "ability": 34,
-    "desc_eng": "",
-    "desc_ita": "ballerina",
+    "desc_eng": "A dancer with unparalleled talent: she dances light as a falling leaf, but strikes like a lightning bolt and leaves you breathless.",
+    "desc_ita": "Una ballerina dal talento ineguagliabile: danza leggera come una foglia che cade, ma ti colpisce come un fulmine e ti lascia senza fiato.",
     "sprite": "core"
   }
 

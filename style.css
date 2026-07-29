@@ -97,7 +97,6 @@ body {
 
 .sprite-img {
     width: 100%;
-    max-width: 240px;
     height: 40vh;
     object-fit: contain;
     filter: drop-shadow(6px 6px 0 #2c1f1a);
