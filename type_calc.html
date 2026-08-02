@@ -14,14 +14,8 @@
                 <div class="type-calc-panels">
                     <div class="type-selector-panel">
                         <div class="type-selection-block">
-                            <strong style="font-size:0.8rem;">FIRST TYPE</strong>
-
+                            <strong style="font-size:0.8rem;">SELECT TYPES</strong>
                             <div class="types-grid-simple" id="type1-buttons-calc"></div>
-                        </div>
-                        <div class="type-selection-block" style="margin-top: 1.5rem;">
-                            <strong style="font-size:0.8rem;">SECOND TYPE</strong>
-
-                            <div class="types-grid-simple" id="type2-buttons-calc"></div>
                         </div>
                         <button class="clear-btn-simple" id="reset-btn-calc">RESET</button>
                     </div>
@@ -46,9 +40,7 @@
     <script src="javascript/weakness.js"></script>
     <script src="javascript/buttonmemory.js"></script>
     <script>
-        // ======================== TYPE CALC LOGIC (identico a prima, nessuna modifica) ========================
-        let tipoSelezionato1 = null;
-        let tipoSelezionato2 = null;
+        let tipiSelezionati = [];
         let listaTipiGlobal = [];
 
         async function ottieniListaTipi() {
@@ -58,7 +50,6 @@
                 const testResult = await window.computeTypeEffectiveness('fire');
                 if (testResult && testResult.multipliers) {
                     listaTipiGlobal = Object.keys(testResult.multipliers);
-                    console.log('Tipi caricati:', listaTipiGlobal);
                     return listaTipiGlobal;
                 }
             } catch (error) {
@@ -70,30 +61,24 @@
         }
 
         async function generaPulsantiTipi() {
-            const container1 = document.getElementById('type1-buttons-calc');
-            const container2 = document.getElementById('type2-buttons-calc');
-            if (!container1 || !container2) return;
+            const container = document.getElementById('type1-buttons-calc');
+            if (!container) return;
             const tipi = await ottieniListaTipi();
             if (tipi.length === 0) {
                 document.getElementById('risultato-calc').innerHTML = '<p style="color: red;">❌ Error: Could not load types from data/types.json</p>';
                 return;
             }
-            container1.innerHTML = '';
-            container2.innerHTML = '';
+            container.innerHTML = '';
             tipi.forEach(tipo => {
-                const btn1 = document.createElement('button');
-                btn1.textContent = tipo;
-                btn1.className = `type-btn-simple ${tipo.toLowerCase()}`;
-                btn1.setAttribute('data-tipo', tipo);
-                btn1.addEventListener('click', (e) => { e.preventDefault(); selezionaTipo(1, tipo); });
-                container1.appendChild(btn1);
-                
-                const btn2 = document.createElement('button');
-                btn2.textContent = tipo;
-                btn2.className = `type-btn-simple ${tipo.toLowerCase()}`;
-                btn2.setAttribute('data-tipo', tipo);
-                btn2.addEventListener('click', (e) => { e.preventDefault(); selezionaTipo(2, tipo); });
-                container2.appendChild(btn2);
+                const btn = document.createElement('button');
+                btn.textContent = tipo;
+                btn.className = `type-btn-simple ${tipo.toLowerCase()}`;
+                btn.setAttribute('data-tipo', tipo);
+                btn.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    selezionaTipo(tipo);
+                });
+                container.appendChild(btn);
             });
             aggiornaStatiPulsanti();
             await generaTabellaMoltiplicatori();
@@ -117,11 +102,15 @@
                         const result = await window.computeTypeEffectiveness(difensore);
                         const multiplier = result.multipliers[attaccante] ?? 1;
                         let classe = '', displayValue = '';
-                        if (multiplier >= 2) { classe = 'x2'; displayValue = '2'; }
+                        if (multiplier >= 8) { classe = 'x8'; displayValue = '8'; }
+                        else if (multiplier >= 4) { classe = 'x4'; displayValue = '4'; }
+                        else if (multiplier >= 2) { classe = 'x2'; displayValue = '2'; }
                         else if (multiplier === 1) { classe = 'x1'; displayValue = '1'; }
                         else if (multiplier === 0.5) { classe = 'x05'; displayValue = '0.5'; }
+                        else if (multiplier === 0.25) { classe = 'x025'; displayValue = '0.25'; }
+                        else if (multiplier === 0.125) { classe = 'x0125'; displayValue = '0.125'; }
                         else if (multiplier === 0) { classe = 'x0'; displayValue = '0'; }
-                        else { classe = 'x1'; displayValue = `x${multiplier}`; }
+                        else { classe = 'x1'; displayValue = `${multiplier}`; }
                         bodyHtml += `<td class="${classe}">${displayValue}</td>`;
                     } catch (e) { bodyHtml += `<td class="x1">?</td>`; }
                 }
@@ -132,40 +121,35 @@
         }
         
         function aggiornaStatiPulsanti() {
-            const hasSelected = !!tipoSelezionato1 || !!tipoSelezionato2;
+            const hasSelected = tipiSelezionati.length > 0;
             document.querySelectorAll('#type1-buttons-calc .type-btn-simple').forEach(btn => {
                 const tipoBtn = btn.getAttribute('data-tipo');
-                const isActive = tipoSelezionato1 === tipoBtn;
+                const isActive = tipiSelezionati.includes(tipoBtn);
                 btn.classList.toggle('active', isActive);
                 btn.classList.toggle('deselected', hasSelected && !isActive);
             });
-            document.querySelectorAll('#type2-buttons-calc .type-btn-simple').forEach(btn => {
-                const tipoBtn = btn.getAttribute('data-tipo');
-                const isActive = tipoSelezionato2 === tipoBtn;
-                btn.classList.toggle('active', isActive);
-                btn.classList.toggle('deselected', hasSelected && !isActive);
-            });
-        }
-        
-        function aggiornaInfoSelezione() {
-            const info1 = document.getElementById('type1-info-calc');
-            const info2 = document.getElementById('type2-info-calc');
         }
         
         async function calcolaDebolezzeEResistenze() {
-            const t1 = tipoSelezionato1;
-            const t2 = tipoSelezionato2;
             const risultatoDiv = document.getElementById("risultato-calc");
-            if (!t1) { risultatoDiv.innerHTML = "<p>Select at least one type.</p>"; return; }
+            if (!tipiSelezionati.length) {
+                risultatoDiv.innerHTML = "<p>Select at least one type.</p>";
+                return;
+            }
             try {
-                const result = await window.computeTypeEffectiveness(t1, t2);
+                const result = await window.computeTypeEffectiveness(tipiSelezionati);
                 const groups = result.groups;
                 let html = '';
+                if (groups['16']?.length) { html += `<div class="categoria-simple categoria-x16"><h3> x16 </h3><div class="tipi-container-simple">` + groups['16'].map(t => `<div class="tipo-box-simple ${t.toLowerCase()}">${t}</div>`).join('') + `</div></div>`; }
+                if (groups['8']?.length) { html += `<div class="categoria-simple categoria-x8"><h3> x8 </h3><div class="tipi-container-simple">` + groups['8'].map(t => `<div class="tipo-box-simple ${t.toLowerCase()}">${t}</div>`).join('') + `</div></div>`; }
                 if (groups['4']?.length) { html += `<div class="categoria-simple categoria-x4"><h3> x4 </h3><div class="tipi-container-simple">` + groups['4'].map(t => `<div class="tipo-box-simple ${t.toLowerCase()}">${t}</div>`).join('') + `</div></div>`; }
                 if (groups['2']?.length) { html += `<div class="categoria-simple categoria-x2"><h3> x2 </h3><div class="tipi-container-simple">` + groups['2'].map(t => `<div class="tipo-box-simple ${t.toLowerCase()}">${t}</div>`).join('') + `</div></div>`; }
                 if (groups['1']?.length) { html += `<div class="categoria-simple categoria-x1"><h3> x1 </h3><div class="tipi-container-simple">` + groups['1'].map(t => `<div class="tipo-box-simple ${t.toLowerCase()}">${t}</div>`).join('') + `</div></div>`; }
                 if (groups['0.5']?.length) { html += `<div class="categoria-simple categoria-x05"><h3> x0.5 </h3><div class="tipi-container-simple">` + groups['0.5'].map(t => `<div class="tipo-box-simple ${t.toLowerCase()}">${t}</div>`).join('') + `</div></div>`; }
                 if (groups['0.25']?.length) { html += `<div class="categoria-simple categoria-x025"><h3> x0.25 </h3><div class="tipi-container-simple">` + groups['0.25'].map(t => `<div class="tipo-box-simple ${t.toLowerCase()}">${t}</div>`).join('') + `</div></div>`; }
+                if (groups['0.125']?.length) { html += `<div class="categoria-simple categoria-x0125"><h3> x0.125 </h3><div class="tipi-container-simple">` + groups['0.125'].map(t => `<div class="tipo-box-simple ${t.toLowerCase()}">${t}</div>`).join('') + `</div></div>`; }
+                if (groups['0.06']?.length) { html += `<div class="categoria-simple categoria-x006"><h3> x0.06 </h3><div class="tipi-container-simple">` + groups['0.06'].map(t => `<div class="tipo-box-simple ${t.toLowerCase()}">${t}</div>`).join('') + `</div></div>`; }
+                if (groups['0.03']?.length) { html += `<div class="categoria-simple categoria-x003"><h3> x0.03 </h3><div class="tipi-container-simple">` + groups['0.03'].map(t => `<div class="tipo-box-simple ${t.toLowerCase()}">${t}</div>`).join('') + `</div></div>`; }
                 if (groups['0']?.length) { html += `<div class="categoria-simple categoria-x0"><h3> x0 </h3><div class="tipi-container-simple">` + groups['0'].map(t => `<div class="tipo-box-simple ${t.toLowerCase()}">${t}</div>`).join('') + `</div></div>`; }
                 if (!html) html = "<p>No special weaknesses or resistances (all neutral).</p>";
                 risultatoDiv.innerHTML = html;
@@ -175,19 +159,20 @@
             }
         }
         
-        function selezionaTipo(slot, tipo) {
-            if (slot === 1) tipoSelezionato1 = (tipoSelezionato1 === tipo) ? null : tipo;
-            else tipoSelezionato2 = (tipoSelezionato2 === tipo) ? null : tipo;
+        function selezionaTipo(tipo) {
+            const index = tipiSelezionati.indexOf(tipo);
+            if (index === -1) {
+                tipiSelezionati.push(tipo);
+            } else {
+                tipiSelezionati.splice(index, 1);
+            }
             aggiornaStatiPulsanti();
-            aggiornaInfoSelezione();
             calcolaDebolezzeEResistenze();
         }
         
         function resetSelezioni() {
-            tipoSelezionato1 = null;
-            tipoSelezionato2 = null;
+            tipiSelezionati = [];
             aggiornaStatiPulsanti();
-            aggiornaInfoSelezione();
             calcolaDebolezzeEResistenze();
         }
         

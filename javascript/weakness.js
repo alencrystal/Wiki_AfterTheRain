@@ -22,36 +22,50 @@ async function loadTypeChart() {
 
 
 async function computeTypeEffectiveness(primary, secondary = null) {
-	if (!primary) throw new Error('Primary type is required');
-
 	await loadTypeChart();
 
 	const normalize = t => {
-		if (!t) return null;
+		if (t === null || t === undefined || t === '') return null;
 		return String(t).toLowerCase();
 	};
 
-	const t1 = normalize(primary);
-	const t2 = normalize(secondary);
+	const selected = [];
+	if (Array.isArray(primary)) {
+		selected.push(...primary);
+	} else if (primary !== null && primary !== undefined) {
+		selected.push(primary);
+	}
+	if (secondary !== null && secondary !== undefined) {
+		selected.push(secondary);
+	}
+
+	const activeTypes = [...new Set(selected.map(normalize).filter(Boolean))];
+	if (!activeTypes.length) throw new Error('At least one type is required');
 
 	const multipliers = {};
 	const neutrals = [];
 
 	for (const att of ALL_TYPES) {
-		const m1 = TYPE_CHART[att]?.[t1] ?? 1;
-		const m2 = t2 ? (TYPE_CHART[att]?.[t2] ?? 1) : 1;
-		const mult = m1 * m2;
+		let mult = 1;
+		for (const type of activeTypes) {
+			mult *= TYPE_CHART[att]?.[type] ?? 1;
+		}
 		multipliers[att] = mult;
 		if (mult === 1) neutrals.push(att);
 	}
 
-	const groups = { '4': [], '2': [], '1': neutrals, '0.5': [], '0.25': [], '0': [] };
+	const groups = { '16': [], '8': [], '4': [], '2': [], '1': neutrals, '0.5': [], '0.25': [], '0.125': [], '0.06': [], '0.03': [], '0': [] };
 
 	for (const [tipo, val] of Object.entries(multipliers)) {
-		if (val >= 4) groups['4'].push(tipo);
+		if (val >= 16) groups['16'].push(tipo);
+		else if (val >= 8) groups['8'].push(tipo);
+		else if (val >= 4) groups['4'].push(tipo);
 		else if (val >= 2) groups['2'].push(tipo);
-		else if (val === 0.25) groups['0.25'].push(tipo);
 		else if (val === 0) groups['0'].push(tipo);
+		else if (val > 0 && val <= 0.03125) groups['0.03'].push(tipo);
+		else if (val > 0 && val <= 0.0625) groups['0.06'].push(tipo);
+		else if (val > 0 && val <= 0.125) groups['0.125'].push(tipo);
+		else if (val > 0 && val <= 0.25) groups['0.25'].push(tipo);
 		else if (val > 0 && val <= 0.5) groups['0.5'].push(tipo);
 		// values equal to 1 are already in '1'
 	}

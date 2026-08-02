@@ -302,7 +302,7 @@
   {
     "id": 30,
     "name": "Tordek",
-    "type": ["ground"],
+    "type": ["steel"],
     "stats": { "hp": 15, "atk": 8, "def": 12, "matk": 8, "mdef": 10, "spd": 10 },
     "ability": 30,
     "desc_eng": "One of the mountain twins. His main line is: 'When the going gets tough, the tough get going.'",
@@ -312,7 +312,7 @@
   {
     "id": 31,
     "name": "Dastan",
-    "type": ["grass"],
+    "type": ["ground"],
     "stats": { "hp": 15, "atk": 8, "def": 10, "matk": 8, "mdef": 10, "spd": 12 },
     "ability": 31,
     "desc_eng": "One of the mountain twins. His catchphrase is: 'It's not cowardice, it's a strategic repositioning.'",
