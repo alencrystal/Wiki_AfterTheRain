@@ -1,0 +1,41 @@
+
+Fire + Ground
+Fire + Light
+Fire + Shadow
+Fire + Spirit
+
+Water + Electro
+Water + Ground
+Water + Grass
+Water + Light
+Water + Shadow
+Water + Spirit
+Water + Wind
+
+Ice + Electro
+Ice + Grass
+Ice + Ground
+Ice + Light
+Ice + Spirit
+Ice + Steel
+Ice + Wind
+
+Grass + Light
+Grass + Shadow
+Grass + Spirit
+
+Electro + Ice
+
+Wind + Light
+Wind + Shadow
+Wind + Spirit
+Wind + Steel
+
+Ground + Steel
+
+Light + Shadow
+Light + Steel
+
+Shadow + Spirit
+
+Spirit + Steel

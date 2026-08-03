@@ -132,7 +132,7 @@
     {
     "id": 26,
     "name": "Nocturne Phases",
-    "description": "every turn change lunar phase that increase one stat by 25% and decrease other 2 by 5%. 'cresent' boost speed, 'full' boost special attack and 'new' boost defence."
+    "description": "every turn change lunar phase that increase one stat by 25% and decrease other by 5%. 'full' boost special attack and 'new' boost defence."
     },
     {
     "id": 27,
@@ -173,6 +173,11 @@
     "id": 34,
     "name": "Electro dance",
     "description": "For the whole turn after changing position, redirect Electro attacks to this character and halve the damage taken. If hit by an Electro attack during this turn, gain 5% Speed."
+    },
+    {
+    "id": 35,
+    "name": "defensive tactics",
+    "description": "For the whole turn after changing position, halve the damage taken."
     }
 
 ]

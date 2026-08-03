@@ -13,7 +13,7 @@
     "id": 1,
     "name": "Renzael",
     "type": ["ice"],
-    "stats": { "hp": 8, "atk": 14, "def": 8, "matk": 13, "mdef": 7, "spd": 13 },
+    "stats": { "hp": 8, "atk": 13, "def": 8, "matk": 14, "mdef": 7, "spd": 13 },
     "ability": 1,
     "desc_eng": "An assassin from a distant land. Not much is known about his past, but he is renowned for his skill with blades and his stealth.",
     "desc_ita": "Un sicario proveniente da una terra lontana. Non si sa molto del suo passato, ma è noto per la sua bravura con le lame e la sua furtività.",
@@ -92,7 +92,7 @@
   {
     "id": 9,
     "name": "Tonmar",
-    "type": ["fire", "ground"],
+    "type": ["ground", "light"],
     "stats": { "hp": 11, "atk": 8, "def": 11, "matk": 9, "mdef": 15, "spd": 9 },
     "ability": 9,
     "desc_eng": "One of the kingdom’s knights, trained to protect and support others. 'If you truly believe in it, you’ll succeed—no matter how difficult it is.'",
@@ -113,7 +113,7 @@
     "id": 11,
     "name": "Lord Gallad",
     "type": ["grass", "wind"],
-    "stats": { "hp": 7, "atk": 12, "def": 14, "matk": 9, "mdef": 10, "spd": 11 },
+    "stats": { "hp": 7, "atk": 9, "def": 12, "matk": 14, "mdef": 10, "spd": 11 },
     "ability": 11,
     "desc_eng": "A noble from the tree village, an expert in monsters and especially insects, with a pet insect named Kiko.",
     "desc_ita": "Un nobile proveniente dal villaggio sugli alberi, esperto di mostri ma soprattutto di insetti, tanto da averne uno da compagnia: Kiko.",
@@ -123,7 +123,7 @@
     "id": 12,
     "name": "Won'tolla",
     "type": ["spirit", "ground"],
-    "stats": { "hp": 9, "atk": 15, "def": 10, "matk": 11, "mdef": 10, "spd": 8 },
+    "stats": { "hp": 8, "atk": 15, "def": 11, "matk": 10, "mdef": 11, "spd": 8 },
     "ability": 12,
     "desc_eng": "Hailing from the uninhabited lands of the south, demons took his family from him. He has sworn vengeance and will do whatever it takes to achieve it.",
     "desc_ita": "proveniente dalle terre disabitate del sud, dei demoni gli hanno portato via la famiglia, ha giurato vendetta e farà di tutto per averla.",
@@ -162,7 +162,7 @@
   {
     "id": 16,
     "name": "Loren",
-    "type": ["electro", "ice"],
+    "type": ["electro", "light"],
     "stats": { "hp": 11, "atk": 9, "def": 8, "matk": 16, "mdef": 9, "spd": 10 },
     "ability": 16,
     "desc_eng": "An ancient wizard, his hobby is collecting spells and magical objects. Despite his gloomy appearance, he is very friendly.",
@@ -182,8 +182,8 @@
   {
     "id": 18,
     "name": "Z",
-    "type": ["steel", "spirit"],
-    "stats": { "hp": 9, "atk": 9, "def": 14, "matk": 9, "mdef": 14, "spd": 8 },
+    "type": ["steel", "shadow"],
+    "stats": { "hp": 9, "atk": 9, "def": 15, "matk": 9, "mdef": 14, "spd": 7 },
     "ability": 18,
     "desc_eng": "A young knight who, in order to become stronger, made a pact with a demon. His name has been forgotten because of this.",
     "desc_ita": "Un giovane cavaliere che per diventare più forte ha stretto un patto con un demone, il suo nome è stato dimenticato per questo.",
@@ -192,7 +192,7 @@
   {
     "id": 19,
     "name": "Anacoreta",
-    "type": ["water", "electro"],
+    "type": ["light"],
     "stats": { "hp": 8, "atk": 14, "def": 8, "matk": 14, "mdef": 8, "spd": 11 },
     "ability": 19,
     "desc_eng": "A fallen goddess from long ago, despite having lost much of her powers, she is still worshiped and respected as such.",
@@ -232,7 +232,7 @@
   {
     "id": 23,
     "name": "Xaleth",
-    "type": ["ice", "spirit"],
+    "type": ["light", "spirit"],
     "stats": { "hp": 9, "atk": 7, "def": 7, "matk": 14, "mdef": 14, "spd": 12 },
     "ability": 22,
     "desc_eng": "A fallen angel, his broken wings still glow with ancient light, while his judgment wavers between mercy and fury.",
@@ -262,8 +262,8 @@
   {
     "id": 26,
     "name": "Selene",
-    "type": ["ice", "wind"],
-    "stats": { "hp": 8, "atk": 8, "def": 13, "matk": 13, "mdef": 8, "spd": 13 },
+    "type": ["ice", "shadow"],
+    "stats": { "hp": 8, "atk": 8, "def": 15, "matk": 15, "mdef": 8, "spd": 9 },
     "ability": 26,
     "desc_eng": "It's said she is the reincarnation of the moon goddess due to her intelligence and kindness; when she speaks, it seems as if the stars are listening...",
     "desc_ita": "Si dice che sia la reincarnazione della dea della luna per via dell'intelligenza e della dolcezza, quando parla sembra che le stelle la ascoltino...",
@@ -282,7 +282,7 @@
   {
     "id": 28,
     "name": "Delphion",
-    "type": ["water", "ground"],
+    "type": ["shadow", "ground"],
     "stats": { "hp": 11, "atk": 10, "def": 7, "matk": 10, "mdef": 14, "spd": 11 },
     "ability": 29,
     "desc_eng": "A sea demon, born from a raging storm, he is able to manipulate water and tides, he dislikes remaining on land.",
@@ -322,7 +322,7 @@
   {
     "id": 32,
     "name": "Helmthryth",
-    "type": ["spirit"],
+    "type": ["shadow"],
     "stats": { "hp": 8, "atk": 14, "def": 7, "matk": 14, "mdef": 7, "spd": 13 },
     "ability": 28,
     "desc_eng": "",
@@ -368,6 +368,16 @@
     "desc_eng": "A dancer with unparalleled talent: she dances light as a falling leaf, but strikes like a lightning bolt and leaves you breathless.",
     "desc_ita": "Una ballerina dal talento ineguagliabile: danza leggera come una foglia che cade, ma ti colpisce come un fulmine e ti lascia senza fiato.",
     "sprite": "core"
+  },
+  {
+    "id": 37,
+    "name": "Ruhn",
+    "type": ["fire", "electro"],
+    "stats": { "hp": 9, "atk": 12, "def": 12, "matk": 6, "mdef": 9, "spd": 15 },
+    "ability": 35,
+    "desc_eng": "",
+    "desc_ita": "",
+    "sprite": "ruhn"
   }
 
 
