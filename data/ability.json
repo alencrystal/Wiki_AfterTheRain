@@ -7,102 +7,102 @@
     {
     "id": 1,
     "name": "Silent Steps",
-    "description": "Boost damage by 15% against enemy in crisis."
+    "description": "Boost damage by 30% against enemy in crisis."
     },
     {
     "id": 2,
     "name": "Positivity",
-    "description": "This character can't go in crisis. ally in crisis heal 2% of their max health every turn."
+    "description": "This character can't go in crisis. ally in crisis heal 5% of their max health every turn."
     },
     {
     "id": 3,
     "name": "kind heart",
-    "description": "Healing, shield and buff are 10% stronger. If the target is in crisis, effects are 15% stronger instead."
+    "description": "Healing, shield and buff are 15% stronger. If the target is in crisis, effects are 30% stronger instead."
     },
     {
     "id": 4,
     "name": "Iron Will",
-    "description": "every hit taken boost a random stat by 7%."
+    "description": "every hit taken boost a random stat by 15%."
     },
     {
     "id": 5, 
     "name": "Sharp mind",
-    "description": "boost magic defense by 15%."
+    "description": "boost magic defense by 30%."
     },
     {
     "id": 6,
     "name": "Knight's honor",
-    "description": "Boost defense by 15%."
+    "description": "Boost defense by 30%."
     },
     {
     "id": 7,
     "name": "Overgrowth",
-    "description": "Boost health by 15%."
+    "description": "Boost health by 30%."
     },
     {
     "id": 8,
     "name": "Beast knight",
-    "description": "While in crisis, boost attack and magic attack by 10%."
+    "description": "While in crisis, boost attack and magic attack by 20%."
     },
     {    
     "id": 9,
     "name": "Never give up",
-    "description": "While in crisis, boost all stats by 5% except for Health."
+    "description": "While in crisis, boost all stats by 10% except for Health."
     },
     {
     "id": 10,
     "name": "Wind's favor",
-    "description": "Boost speed by 15%."
+    "description": "Boost speed by 30%."
     },
     {
     "id": 11,
     "name": "Bug lord",
-    "description": "Boost grass and wind attacks by 15%."
+    "description": "Boost grass, wind and fungus attacks by 10%. Reduce grass, wind and fungus damage taken by 15%."
     },
     {
     "id": 12,
     "name": "Omen of the forest",
-    "description": "Reduce enemies speed by 5%."
+    "description": "Reduce enemies speed by 15%."
     },
     {
     "id": 13,
     "name": "Tenacity",
-    "description": "While in crisis, boost defense and magic defense by 10%."
+    "description": "While in crisis, boost defense and magic defense by 20%."
     },
     {
     "id": 14,
     "name": "Fire!!",
-    "description": "Boost fire attack by 20%."
+    "description": "Boost fire attack by 30%."
     },
     {
     "id": 15,
     "name": "Rank SSS",
-    "description": "Once per battle, survive a fatal hit with 1 HP. After surviving, boost all stats by 6%."
+    "description": "Once per battle, survive a fatal hit with 1 HP. After surviving, boost all stats by 10%."
     },
     {
     "id": 16,
     "name": "Basic of magic",
-    "description": "Boost fire, grass and water attack by 5%. Reduce fire, grass, water damage taken by 10%."
+    "description": "Boost fire, grass and water attack by 10%. Reduce fire, grass, water damage taken by 15%."
     },
     {
     "id": 17,
     "name": "lost forest's breath",
-    "description": "Boost attack by 10%, While in crisis instead Boost defence by 5% and heal 5% of their max health every turn."
+    "description": "Boost attack by 20%, While in crisis instead Boost defence by 15% and heal 5% of their max health every turn."
     },
     {
     "id": 18,
     "name": "Dark aura",
-    "description": "Boost dark attack by 20%."
+    "description": "Boost 'Dark' attack by 30%."
     },
     {
     "id": 19,
     "name": "Divine blessing",
-    "description": "Heals every turn for 8% of max health."   
+    "description": "Heals every turn for 10% of max health."   
     },
     {
     "id": 20,
     "name": "relentless assault",
-    "description": "Boost damage by 25% if the target resists the attack type."
+    "description": "Boost damage by 30% if the target resists the attack type."
     },
     {
     "id": 21,
@@ -117,27 +117,27 @@
     {
     "id": 23,
     "name": "Wind song",
-    "description": "Boost wind attack by 20%."
+    "description": "Boost wind attack by 30%."
     },
     {
     "id": 24,
     "name": "Warrior’s Might",
-    "description": "Boost attack by 15%."
+    "description": "Boost attack by 30%."
     },
     {
     "id": 25,
     "name": "Mana flow",
-    "description": "Boost special attack by 15%."
+    "description": "Boost special attack by 30%."
     },
     {
     "id": 26,
-    "name": "Nocturne Phases",
-    "description": "every turn change lunar phase that increase one stat by 25% and decrease other by 5%. 'full' boost special attack and 'new' boost defence."
+    "name": "Moon blessing",
+    "description": "Boost 'Star' and 'Moon' attack by 30%."
     },
     {
     "id": 27,
     "name": "Cursed dice",
-    "description": "every turn choose 2 stat, the enemies lose 6% of the first stat, and gain 3% of the second."
+    "description": "every turn choose 2 stat, the enemies lose 10% of the first stat, and gain 5% of the second."
     },
     {
     "id": 28,
@@ -147,17 +147,17 @@
     {
     "id": 29,
     "name": "Crisis point",
-    "description": "When hit a character in crisis, that character lose 5% attack or magic attack depending on the attack type."
+    "description": "When hit a character in crisis, that character lose 10% attack or magic attack depending on the attack type."
     },
     {
     "id": 30,
     "name": "Plating armor",
-    "description": "When hit by an attack, gain 5% defense."
+    "description": "When hit by an attack, gain 10% defense."
     },
     {
     "id": 31,
     "name": "Disengage",
-    "description": "When hit by an attack, gain 5% speed."
+    "description": "When hit by an attack, gain 10% speed."
     },
     {
     "id": 32,
@@ -172,7 +172,7 @@
     {
     "id": 34,
     "name": "Electro dance",
-    "description": "For the whole turn after changing position, redirect Electro attacks to this character and halve the damage taken. If hit by an Electro attack during this turn, gain 5% Speed."
+    "description": "For the whole turn after changing position, redirect Electro attacks to this character and halve the damage taken. If hit by an Electro attack during this turn, gain 10% Speed."
     },
     {
     "id": 35,

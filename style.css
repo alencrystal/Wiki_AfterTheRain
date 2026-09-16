@@ -144,9 +144,10 @@ body {
 .badge.spirit, .resist-badge.spirit, .type-btn-simple.spirit, .tipo-box-simple.spirit, .defending-type-header.spirit, .attacking-type-header.spirit { background: #2a2436; border-color: #8f82b0; box-shadow: 5px 5px 0 #120f1a, inset 0 0 0 2px #b8aedd; }
 .badge.steel, .resist-badge.steel, .type-btn-simple.steel, .tipo-box-simple.steel, .defending-type-header.steel, .attacking-type-header.steel { background: #2f3238; border-color: #8f96a3; box-shadow: 5px 5px 0 #14161a, inset 0 0 0 2px #b9c0cc; }
 .badge.wind, .resist-badge.wind, .type-btn-simple.wind, .tipo-box-simple.wind, .defending-type-header.wind, .attacking-type-header.wind { background: #2f3f3a; border-color: #86b3a6; box-shadow: 5px 5px 0 #141f1c, inset 0 0 0 2px #b5d6cc; }
-/* LIGHT SHADOW */
+/* LIGHT SHADOW, FUNGUS */
 .badge.light, .resist-badge.light, .type-btn-simple.light, .tipo-box-simple.light, .defending-type-header.light, .attacking-type-header.light { background: #6e6b63; border-color: #d8d3c5; box-shadow: 5px 5px 0 #2e2c28, inset 0 0 0 2px #ffffff; }
 .badge.shadow, .resist-badge.shadow, .type-btn-simple.shadow, .tipo-box-simple.shadow, .defending-type-header.shadow, .attacking-type-header.shadow { background: #10141d; border-color: #3b475e; box-shadow: 5px 5px 0 #05070a, inset 0 0 0 2px #5f6f8c; }
+.badge.fungus, .resist-badge.fungus, .type-btn-simple.fungus, .tipo-box-simple.fungus, .defending-type-header.fungus, .attacking-type-header.fungus { background: #6e2619; border-color: #e07b5a; box-shadow: 5px 5px 0 #300f09, inset 0 0 0 2px #ffc1ad; }
 
 /* Abilità  */
 .ability-section {
@@ -702,6 +703,7 @@ body {
     background: #3a2a24;
     color: #ffd966;
 }
+/*table resistance and effectiveness */
 .defending-type-header.water, .attacking-type-header.water,
 .defending-type-header.fire, .attacking-type-header.fire,
 .defending-type-header.grass, .attacking-type-header.grass,
@@ -712,6 +714,7 @@ body {
 .defending-type-header.steel, .attacking-type-header.steel,
 .defending-type-header.wind, .attacking-type-header.wind,
 .defending-type-header.light, .attacking-type-header.light,
-.defending-type-header.shadow, .attacking-type-header.shadow {
+.defending-type-header.shadow, .attacking-type-header.shadow,
+.defending-type-header.fungus, .attacking-type-header.fungus {
     color: #faf3e5;
 }

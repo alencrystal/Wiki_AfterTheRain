@@ -112,7 +112,7 @@
   {
     "id": 11,
     "name": "Lord Gallad",
-    "type": ["grass", "wind"],
+    "type": ["fungus"],
     "stats": { "hp": 7, "atk": 9, "def": 12, "matk": 14, "mdef": 10, "spd": 11 },
     "ability": 11,
     "desc_eng": "A noble from the tree village, an expert in monsters and especially insects, with a pet insect named Kiko.",
@@ -222,7 +222,7 @@
   {
     "id": 22,
     "name": "Antheia",
-    "type": ["grass", "ground"],
+    "type": ["grass", "light"],
     "stats": { "hp": 18, "atk": 9, "def": 8, "matk": 9, "mdef": 11, "spd": 8 },
     "ability": 21,
     "desc_eng": "A woodland faun, she appears when winter fades. Where she walks, flowers bloom, and seeing her is a sign that spring is near.",
@@ -262,8 +262,8 @@
   {
     "id": 26,
     "name": "Selene",
-    "type": ["ice", "shadow"],
-    "stats": { "hp": 8, "atk": 8, "def": 15, "matk": 15, "mdef": 8, "spd": 9 },
+    "type": ["light", "shadow"],
+    "stats": { "hp": 8, "atk": 11, "def": 12, "matk": 15, "mdef": 9, "spd": 8 },
     "ability": 26,
     "desc_eng": "It's said she is the reincarnation of the moon goddess due to her intelligence and kindness; when she speaks, it seems as if the stars are listening...",
     "desc_ita": "Si dice che sia la reincarnazione della dea della luna per via dell'intelligenza e della dolcezza, quando parla sembra che le stelle la ascoltino...",
