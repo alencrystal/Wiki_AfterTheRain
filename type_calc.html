@@ -19,9 +19,15 @@
                         </div>
                         <button class="clear-btn-simple" id="reset-btn-calc">RESET</button>
                     </div>
-                    <div class="result-panel-calc">
-                        <strong style="font-size:0.8rem;">DAMAGE MULTIPLIERS</strong>
-                        <div id="risultato-calc" style="margin-top: 1rem;"></div>
+                    <div class="result-panels-calc">
+                        <div class="result-panel-calc">
+                            <strong style="font-size:0.8rem;">DEFENSIVE MULTIPLIERS</strong>
+                            <div id="risultato-calc" style="margin-top: 1rem;"></div>
+                        </div>
+                        <div class="result-panel-calc">
+                            <strong style="font-size:0.8rem;">OFFENSIVE MULTIPLIERS</strong>
+                            <div id="risultato-offensivo-calc" style="margin-top: 1rem;"></div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -132,8 +138,10 @@
         
         async function calcolaDebolezzeEResistenze() {
             const risultatoDiv = document.getElementById("risultato-calc");
+            const risultatoOffensivoDiv = document.getElementById("risultato-offensivo-calc");
             if (!tipiSelezionati.length) {
                 risultatoDiv.innerHTML = "<p>Select at least one type.</p>";
+                risultatoOffensivoDiv.innerHTML = "<p>Select at least one type.</p>";
                 return;
             }
             try {
@@ -153,9 +161,37 @@
                 if (groups['0']?.length) { html += `<div class="categoria-simple categoria-x0"><h3> x0 </h3><div class="tipi-container-simple">` + groups['0'].map(t => `<div class="tipo-box-simple ${t.toLowerCase()}">${t}</div>`).join('') + `</div></div>`; }
                 if (!html) html = "<p>No special weaknesses or resistances (all neutral).</p>";
                 risultatoDiv.innerHTML = html;
+
+                const offensiveMultipliers = {};
+                for (const targetType of listaTipiGlobal) {
+                    const targetResult = await window.computeTypeEffectiveness(targetType);
+                    offensiveMultipliers[targetType] = Math.max(...tipiSelezionati.map(attackingType => {
+                        return targetResult.multipliers[attackingType] ?? 1;
+                    }));
+                }
+
+                const offensiveGroups = {
+                    '2': [],
+                    '1': [],
+                    '0.5': [],
+                    '0': []
+                };
+                for (const [targetType, multiplier] of Object.entries(offensiveMultipliers)) {
+                    const category = multiplier >= 2 ? '2' : multiplier === 1 ? '1' : multiplier === 0.5 ? '0.5' : '0';
+                    offensiveGroups[category].push(targetType);
+                }
+
+                let offensiveHtml = '';
+                for (const category of ['2', '1', '0.5', '0']) {
+                    if (!offensiveGroups[category].length) continue;
+                    const className = category === '0.5' ? 'x05' : `x${category}`;
+                    offensiveHtml += `<div class="categoria-simple categoria-${className}"><h3> x${category} </h3><div class="tipi-container-simple">` + offensiveGroups[category].map(t => `<div class="tipo-box-simple ${t.toLowerCase()}">${t}</div>`).join('') + `</div></div>`;
+                }
+                risultatoOffensivoDiv.innerHTML = offensiveHtml || "<p>No valid targets.</p>";
             } catch (error) {
                 console.error(error);
                 risultatoDiv.innerHTML = "<p>❌ Error calculating type effectiveness.</p>";
+                risultatoOffensivoDiv.innerHTML = "<p>❌ Error calculating type effectiveness.</p>";
             }
         }
         
