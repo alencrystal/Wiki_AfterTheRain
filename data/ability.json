@@ -37,7 +37,7 @@
     {
     "id": 7,
     "name": "Overgrowth",
-    "description": "Boost health by 30%."
+    "description": "Boost health by 25%."
     },
     {
     "id": 8,
@@ -47,7 +47,7 @@
     {    
     "id": 9,
     "name": "Never give up",
-    "description": "While in crisis, boost all stats by 10% except for Health."
+    "description": "While in crisis, boost all stats by 13% except for Health."
     },
     {
     "id": 10,
@@ -97,7 +97,7 @@
     {
     "id": 19,
     "name": "Divine blessing",
-    "description": "Heals every turn for 10% of max health."   
+    "description": "Heals every turn for 8% of max health."   
     },
     {
     "id": 20,
@@ -107,12 +107,12 @@
     {
     "id": 21,
     "name": "Forest Veil",
-    "description": "Prevent damage and gain health from grass attacks."
+    "description": "Prevent damage and gain health from grass attacks. Boost damage taken from fire attacks by 10%."
     },
     {
     "id": 22,
     "name": "Skybound",  
-    "description": "This unit gain wind type."
+    "description": "This unit gain wind type and boost wind attack by 10%. "
     },
     {
     "id": 23,
@@ -167,12 +167,12 @@
     {
     "id": 33,
     "name": "Water ward",
-    "description": "Prevent damage and gain health from water attacks."
+    "description": "Prevent damage and gain health from water attacks. Boost damage taken from electro attacks by 10%."
     },
     {
     "id": 34,
     "name": "Electro dance",
-    "description": "For the whole turn after changing position, redirect Electro attacks to this character and halve the damage taken. If hit by an Electro attack during this turn, gain 10% Speed."
+    "description": "For the whole turn after changing position, redirect Electro attacks to this character and prevent damage. If hit by an Electro attack during this turn, gain 10% Speed."
     },
     {
     "id": 35,
